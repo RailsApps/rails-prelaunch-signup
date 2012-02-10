@@ -1,0 +1,14 @@
+*Request Invitation*
+As a visitor to the website
+I want to request an invitation 
+so I'll be notified when the site is launched
+
+*See Invitation Requests*
+As the owner of the site
+I want to view a list of visitors who have requested invitations
+so I can know if my offer is gaining traction
+
+*Collect Email Addresses*
+As the owner of the site
+I want to collect email addresses for a mailing list
+so I can send an announcement when I launch the site

@@ -40,7 +40,7 @@ If there is interest, the author and contributors will implement additional feat
 
 h4. User Stories (Implemented)
 
-You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/implemented.html that have been implemented.
+You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/implemented.textile that have been implemented.
 
 Here are some user stories that have been implemented:
 
@@ -63,7 +63,7 @@ so I can send an announcement when I launch the site
 
 h4. User Stories (Not Implemented)
 
-You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/unimplemented.html that have not been implemented. If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/unimplemented.textile that have not been implemented. If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
 Here are some user stories that have not been implemented. If you implement any of these, please contribute your code to the project with a pull request.
 

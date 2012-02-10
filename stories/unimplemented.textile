@@ -1,0 +1,19 @@
+*Post to Twitter After Sign Up*
+As a user
+I want an option to post to Twitter after I sign up
+so my followers will learn about the site
+
+*Post to Facebook After Sign Up*
+As a user
+I want an option to post to Facebook after I sign up
+so my Facebook friends will learn about the site
+
+*View "About" Page*
+As a visitor to the website
+I want to view the "About" page
+so I can learn more about what the site will offer
+
+*View "Contact" Page*
+As a visitor to the website
+I want to view the "Contact" page
+so I can contact the owner of the site
