@@ -34,7 +34,7 @@ See a list of additional "Rails examples, tutorials, and starter apps":http://ra
 
 h2. What Is Implemented — and What Is Not
 
-Currently, the application only serves to display a landing page with a form for visitors to request invitations. Visitor's email addresses are collected in the application's database. An administrator can view the collected email addresses.
+Currently, the application only serves to display a landing page with a form for visitors to request invitations. Visitors' email addresses are collected in the application's database. An administrator can view the collected email addresses.
 
 If there is interest, the author and contributors will implement additional features. See below for a list of implemented and proposed user stories.
 
