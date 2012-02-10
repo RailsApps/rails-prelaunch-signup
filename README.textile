@@ -1,59 +1,323 @@
 h1. Rails Prelaunch Signup
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+This is an example application for Rails 3.2 that shows how to create a Rails application for a startup prelaunch signup site.
 
-h2. More Information
+The application is intended for Rails developers who want to build and deploy their own prelaunch site. The application is very simple and any experienced Rails developer could easily build it. The aim of the project is to eliminate individual effort building an application that meets a common need. As an open source project, you can use code that is already implemented and tested. Your individual effort can be better applied to add features to a prelaunch app, customize the look and functionality of your prelaunch site, and get started on a real application for a launch. See below for a discussion of "What Is Implemented — and What Is Not" including links to hosted alternatives. This is an application for Rails develoeprs who want to build their own prelaunch signup site.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+This app extends the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example app. "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management.
 
-h2. Required Gems
+Best of all, there's a "detailed tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial (walk-through) to show how it's built.
 
-This application requires this gem:
+You can clone this app or generate a new Rails application using this app as a template.
 
-* "rails":http://rubygems.org/gems/rails
+Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+
+h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
+
+Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
+
+Add your prelaunch site to this list when you're done: "Rails Applications Built from the RailsApps Examples":http://railsapps.github.com/rails-applications-from-examples.html.
+
+h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
+
+A complete walkthrough tutorial is available on the GitHub wiki:
+
+h4. "View the Tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial
+
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of "recommended resources for Rails":http://railsapps.github.com/best-recommended-learning-rails-books-resources.html.
+
+If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
+
+h4. Similar Examples and Tutorials
+
+See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
+
+h2. What Is Implemented — and What Is Not
+
+Currently, the application only serves to display a landing page with a form for visitors to request invitations. Visitor's email addresses are collected in the application's database. An administrator can view the collected email addresses.
+
+If there is interest, the author and contributors will implement additional features. See below for a list of implemented and proposed user stories.
+
+h4. User Stories (Implemented)
+
+You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/implemented.html that have been implemented.
+
+Here are some user stories that have been implemented:
+
+<pre>
+*Request Invitation*
+As a visitor to the website
+I want to request an invitation 
+so I'll be notified when the site is launched
+
+*See Invitation Requests*
+As the owner of the site
+I want to view a list of visitors who have requested invitations
+so I can know if my offer is gaining traction
+
+*Collect Email Addresses*
+As the owner of the site
+I want to collect email addresses for a mailing list
+so I can send an announcement when I launch the site
+</pre>
+
+h4. User Stories (Not Implemented)
+
+You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/unimplemented.html that have not been implemented. If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+
+Here are some user stories that have not been implemented. If you implement any of these, please contribute your code to the project with a pull request.
+
+<pre>
+*Post to Twitter After Sign Up*
+As a user
+I want an option to post to Twitter after I sign up
+so my followers will learn about the site
+
+*Post to Facebook After Sign Up*
+As a user
+I want an option to post to Facebook after I sign up
+so my Facebook friends will learn about the site
+
+*View "About" Page*
+As a visitor to the website
+I want to view the "About" page
+so I can learn more about what the site will offer
+
+*View "Contact" Page*
+As a visitor to the website
+I want to view the "Contact" page
+so I can contact the owner of the site
+</pre>
+
+h4. Articles and Discussion
+
+Here are some articles that describe the purpose and options for a startup prelaunch page:
+
+* "Building An Effective ‘Coming Soon’ Page for Your Product":http://www.smashingmagazine.com/2011/05/24/building-an-effective-coming-soon-page-for-your-product/ from Smashing Magazine
+* "Elements Of A Viral Launch Page":http://spking.com/2011/08/30/roll-your-own-pre-launch-page/ from Smashing Magazine
+* "Which Are the Best Startup Prelaunch Pages?":http://www.quora.com/Which-are-the-best-startup-prelaunch-pages from Quora
+
+Have other suggestions? Please create an issue with your suggestion or email the author.
+
+h4. Similar Projects
+
+You can find other projects on GitHub that offer similar functionality.
+
+|_. Author |_. Project |_. Description |
+| johngrimes | "t-minus":https://github.com/johngrimes/t-minus | Instant prelaunch page for your Rails 3 app |
+| renderedtext | "coming-soon":https://github.com/renderedtext/coming-soon | Sinatra app to show a pre-launch page and collect emails |
+| hashrocket | "coming-soon":https://github.com/hashrocket/coming-soon | Sinatra app to register email addresses |
+| jbeyers | "django-prelaunch":https://github.com/jbeyers/django-prelaunch | Django app to gather email addresses with a referral mechanism |
+
+Found others? Please create an issue with your suggestion or email the author.
+
+h4. Hosted Services
+
+Here are hosted services that offer similar functionality and more features.
+
+"LaunchRock":http://launchrock.com/ - set up a social launching-soon page in minutes
+
+"KickoffLabs":http://www.kickofflabs.com/ - viral landing pages you'll love in 60 seconds
+
+"Prefinery":http://www.prefinery.com/ - complete beta management platform that encourages social sharing
+
+"Unbounce":http://unbounce.com/ - create, publish & A/B test landing pages
+
+h4. WordPress Themes
+
+WordPress themes are a popular way to stage a startup prelaunch page.
+
+"Launch Effect":http://launcheffectapp.com/ - a WordPress theme for viral launches
 
 h2. Dependencies
 
-To use this application, you will need:
+Before generating your application, you will need:
 
-* The Ruby language (version 1.8.7 or 1.9.2)
-* Rails (version 3.0.4 or newer)
+* The Ruby language (version 1.9.3)
+* Rails 3.2
 
-h2. Installing the Application
+See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+h2. Getting the Application
+
+You have several options for getting the code.
+
+h4. Downloading the Code
+
+If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
+
+@$ git clone git://github.com/RailsApps/rails-prelaunch-signup.git@
+
+The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
+
+h4. Using the Ready-Made Application Template
+
+You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
+
+To build the "rails-prelaunch-signup" example application, run the command:
+
+<pre>
+rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails-prelaunch-signup-template.rb -T@
+</pre>
+  
+Use the @-T@ flag to skip Test::Unit files.
+
+This creates a new Rails app (with the name @myapp@) on your computer.
+
+The application generator template will ask you for your preferences. To duplicate the example app exactly, choose the following preferences. Choose others to match what you prefer.
+
+Would you like to use Haml instead of ERB? *Yes.*
+Would you like to use RSpec instead of TestUnit? *Yes.*
+Would you like to use factory_girl for test fixtures with RSpec? *Yes.*
+Would you like to use machinist for test fixtures with RSpec? *No.*
+Would you like to use Cucumber for your BDD? *Yes.*
+Would you like to use Guard to automate your workflow? *No.*
+Would you like to enable the LiveReload guard? *No.*
+Would you like to use Devise for authentication? *Yes.*
+Which front-end framework would you like for HTML5 and CSS3? *Twitter Bootstrap*
+Would you like to use 'rails-footnotes' during development? *No.*
+Would you like to set a robots.txt file to ban spiders? *No.*
+
+h4. Use "Recipes" to Customize an Application Template
+
+The "tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial shows how a customized application template can be assembled from "recipes." The application template was created using the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages.
+
+h4. Please Remember: Edit the README
+
+If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
 
 h2. Getting Started
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+h4. About Required Gems
+
+The application uses the following gems:
+
+* "rails":http://rubygems.org/gems/rails
+* "rspec-rails":http://rubygems.org/gems/rspec-rails
+* "database_cleaner":http://rubygems.org/gems/database_cleaner
+* "factory_girl_rails":http://rubygems.org/gems/factory_girl_rails
+* "cucumber-rails":http://rubygems.org/gems/cucumber-rails
+* "capybara":http://rubygems.org/gems/capybara
+* "devise":http://rubygems.org/gems/devise
+
+h4. Install the Required Gems
+
+Install the required gems on your computer:
+
+@$ bundle install@
+
+You can check which gems are installed on your computer with:
+
+@$ gem list --local@
+
+Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
+
+h4. Set Up Configuration for Devise
+
+This app uses "Devise":http://github.com/plataformatec/devise for user management and authentication.
+
+You can modify the configuration file for Devise if you want to use something other than the defaults:
+
+*config/initializers/devise.rb*
+
+h4. Configure Email for Devise
+
+Configure email by modifying
+
+*config/initializers/devise.rb*
+
+and setting the return email address for emails sent from the application.
+
+You may need to set values for your mailhost in
+
+*config/environments/development.rb*
+*config/environments/production.rb*
+
+h2. Create a Default User
+
+h4. Set Up a Database Seed File
+
+You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
+
+<pre>
+puts 'SETTING UP DEFAULT USER LOGIN'
+user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user.name
+</pre>
+
+Use the defaults or change the values for name, email, and password as you wish.
+
+h4. Seed the Database
+
+Add the default user to the database by running the command:
+
+@$ rake db:migrate@
+@$ rake db:seed@
+
+h4. Test the App
+
+You can check that your app runs properly by entering the command
+
+@$ rails server@
+
+To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000. You should see the default user listed on the home page. When you click on the user's name, you should be required to log in before seeing the user's detail page.
+
+To sign in as the default user, (unless you've changed it) use
+
+* email: user@example.com
+* password: please
+
+You should delete or change the pre-configured logins before you deploy your application.
+
+h2. Deploy to Heroku
+
+For your convenience, here are instructions for "deploying your app to Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
+
+h2. Testing
+
+The application contains RSpec unit tests and Cucumber scenarios and steps. The tests are minimal and can be improved.
+
+Please send the author a message, create an issue, or submit a pull request if you can contribute improved RSpec or Cucumber files.
+
+After installing the application, run @rake -T@ to check that rake tasks for RSpec and Cucumber are available.
+
+Run @rake spec@ to run all RSpec tests.
+
+Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios and steps.
 
 h2. Documentation and Support
 
 This is the only documentation.
 
+For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
+
 h4. Issues
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues if you identify any problems or have suggestions for improvements.
 
-h2. Similar Projects
+h4. Where to Get Help
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
+
+You can also try "Rails Hotline":http://www.railshotline.com/, a free telephone hotline for Rails help staffed by volunteers.
 
 h2. Contributing
 
 If you make improvements to this application, please share with others.
 
-* Fork the project on GitHub.
-* Make your feature addition or bug fix.
-* Commit with Git.
-* Send the author a pull request.
+Send the author a message, create an "issue":http://github.com/RailsApps/rails-prelaunch-signup/issues, or fork the project and submit a pull request.
 
 If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
 
 h2. Credits
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the application and wrote the tutorial.
+
+Is the app useful to you? Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps
+and tweet some praise. I'd love to know you were helped out by what I've put together.
 
 h2. License
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+h4. Public Domain Dedication
+
+This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
