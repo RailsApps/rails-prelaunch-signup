@@ -105,7 +105,7 @@ Then /^I should be signed out$/ do
   page.should_not have_content "Logout"
 end
 
-Then /^I should see a succesfull sign up message$/ do
+Then /^I should see a successful sign up message$/ do
   page.should have_content "Welcome! You have signed up successfully."
 end
 
