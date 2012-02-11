@@ -1,7 +1,7 @@
 *Request Invitation*
 As a visitor to the website
 I want to request an invitation 
-so I'll be notified when the site is launched
+so I can be notified when the site is launched
 
 *See Invitation Requests*
 As the owner of the site
