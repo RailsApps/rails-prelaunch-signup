@@ -2,9 +2,9 @@ h1. Rails Prelaunch Signup
 
 This is an example application for Rails 3.2 that shows how to create a Rails application for a startup prelaunch signup site.
 
-The application is intended for Rails developers who want to build and deploy their own prelaunch site. The application is very simple and any experienced Rails developer could easily build it. The aim of the project is to eliminate individual effort building an application that meets a common need. As an open source project, you can use code that is already implemented and tested. Your individual effort can be better applied to add features to a prelaunch app, customize the look and functionality of your prelaunch site, and get started on a real application for a launch. See below for a discussion of "What Is Implemented — and What Is Not" including links to hosted alternatives. This is an application for Rails develoeprs who want to build their own prelaunch signup site.
+This application is for Rails developers who want to build and deploy their own prelaunch site. The application is very simple and any experienced Rails developer could easily build it. The aim of the project is to eliminate individual effort spent building an application that meets a common need. As an open source project, you can use code that is already implemented and tested. Your individual effort can be better applied to add features to your prelaunch app, customize the look and functionality of your prelaunch site, and get started on a real application for a launch. See below for a discussion of "What Is Implemented — and What Is Not" including links to hosted alternatives.
 
-This app extends the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example app. "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management.
+This app extends the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example app. It uses "Devise":http://github.com/plataformatec/devise for ready-made authentication and user management.
 
 Best of all, there's a "detailed tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial (walk-through) to show how it's built.
 
@@ -63,7 +63,7 @@ so I can send an announcement when I launch the site
 
 h4. User Stories (Not Implemented)
 
-You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/unimplemented.textile that have not been implemented. If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+You can see a list of user stories that have "not been implemented":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/unimplemented.textile. If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
 Here are some user stories that have not been implemented. If you implement any of these, please contribute your code to the project with a pull request.
 
