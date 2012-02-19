@@ -2,13 +2,17 @@ h1. Rails Prelaunch Signup
 
 This is an example application for Rails 3.2 that shows how to create a Rails application for a startup prelaunch signup site.
 
-This application is for Rails developers who want to build and deploy their own prelaunch site. The application is very simple and any experienced Rails developer could easily build it. The aim of the project is to eliminate individual effort spent building an application that meets a common need. As an open source project, you can use code that is already implemented and tested. Your individual effort can be better applied to add features to your prelaunch app, customize the look and functionality of your prelaunch site, and get started on a real application for a launch. See below for a discussion of "What Is Implemented — and What Is Not" including links to hosted alternatives.
+You can clone this app or generate a new Rails application from this app's template.
 
-This app extends the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber example app. It uses "Devise":http://github.com/plataformatec/devise for ready-made authentication and user management.
+This application is for Rails developers who want to build and deploy their own prelaunch site. The application is very simple and any experienced Rails developer could easily build it. The aim of the project is to eliminate individual effort spent building an application that meets a common need. As an open source project, you can use code that is already implemented and tested. Your individual effort can be better applied to add features to your prelaunch app, customize the look and functionality of your prelaunch site, and get started on a real application for a launch.
 
-Best of all, there's a "detailed tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial (walk-through) to show how it's built.
+Best of all, there's a "detailed tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial (walk-through) to show how it is built.
 
-You can clone this app or generate a new Rails application using this app as a template.
+"Devise":http://github.com/plataformatec/devise gives us ready-made authentication and user management. It is easy to build "authentication from scratch":http://railscasts.com/episodes/250-authentication-from-scratch for a Rails application. It is even easier to build an application that simply saves email addresses to a database. We'll use Devise because it offers a full set of features used in more complex applications, such as recovering a user's forgotten password. By using Devise for the prelaunch signup application, you can use the same user database for a post-launch site.
+
+Devise handles signing up users through a registration feature. We use the Devise registration process to collect email addresses and create user accounts. Instead of confirming an email address immediately, we email a "thank you for your request" acknowledgment and mark the user account as "inactive." When you are ready to invite users to try your site (either in beta or post-launch) you can mark the account as "active" and send the user an email invitation.
+
+This app uses the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber  example app as a starter app. You can see a "tutorial for the rails3-devise-rspec-cucumber example app":https://github.com/RailsApps/rails3-devise-rspec-cucumber/wiki/Tutorial to see how the starter app is built.
 
 Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
