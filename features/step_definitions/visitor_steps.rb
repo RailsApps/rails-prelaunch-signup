@@ -1,6 +1,6 @@
 def new_user
   @user ||= { :email => "testy@example.com",
-    :password => "please", :password_confirmation => "please"}
+    :password => "please", :password_confirmation => "please" }
 end
 
 def invitation_request user
@@ -32,6 +32,11 @@ end
 Then /^my email address should be stored in the database$/ do
   test_user = User.find_by_email("testy@example.com")
   test_user.should respond_to(:email)
+end
+
+Then /^my account should be designated inactive$/ do
+  test_user = User.find_by_email("testy@example.com")
+  test_user.active.should be_false
 end
 
 Then /^I should receive an email with "([^"]*)"$/ do |arg1|
