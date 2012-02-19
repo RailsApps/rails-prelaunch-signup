@@ -1,6 +1,6 @@
 h1. Rails Prelaunch Signup
 
-This is an example application for Rails 3.2 that shows how to create a Rails application for a startup prelaunch signup site.
+Example application for Rails 3.2 that shows how to create a Rails application for a startup prelaunch signup site.
 
 You can clone this app or generate a new Rails application from this app's template.
 
