@@ -18,6 +18,7 @@ Feature: Request Invitation
   Scenario: User signs up with valid data
     When I request an invitation with valid user data
     Then I should see a message "Thank You"
+    And my email address should be stored in the database
     # And I should receive an email with "Request Received"
 
   Scenario: User signs up with invalid email

@@ -1,5 +1,5 @@
 def new_user
-  @user ||= { :email => "testy@userton.com",
+  @user ||= { :email => "testy@example.com",
     :password => "please", :password_confirmation => "please"}
 end
 
@@ -27,6 +27,11 @@ end
 
 Then /^I should see a message "([^\"]*)"$/ do |arg1|
   page.should have_content (arg1)
+end
+
+Then /^my email address should be stored in the database$/ do
+  test_user = User.find_by_email("testy@example.com")
+  test_user.should respond_to(:email)
 end
 
 Then /^I should receive an email with "([^"]*)"$/ do |arg1|
