@@ -1,5 +1,5 @@
 def new_user
-  @user ||= { :email => "testy@example.com",
+  @user ||= { :email => "example@example.com",
     :password => "please", :password_confirmation => "please" }
 end
 
@@ -30,19 +30,13 @@ Then /^I should see a message "([^\"]*)"$/ do |arg1|
 end
 
 Then /^my email address should be stored in the database$/ do
-  test_user = User.find_by_email("testy@example.com")
+  test_user = User.find_by_email("example@example.com")
   test_user.should respond_to(:email)
 end
 
 Then /^my account should be designated inactive$/ do
-  test_user = User.find_by_email("testy@example.com")
+  test_user = User.find_by_email("example@example.com")
   test_user.active.should be_false
-end
-
-Then /^I should receive an email with "([^"]*)"$/ do |arg1|
-  ActionMailer::Base.deliveries.should_not be_empty
-  @email = ActionMailer::Base.deliveries.last
-  @email.body.should include(arg1)
 end
 
 When /^I request an invitation with valid user data$/ do
