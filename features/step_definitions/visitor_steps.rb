@@ -10,7 +10,7 @@ def invitation_request user
 end
 
 When /^I visit the home page$/ do
-    visit '/'
+    visit root_path
 end
 
 Then /^I should see a button "([^\"]*)"$/ do |arg1|
