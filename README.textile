@@ -161,7 +161,7 @@ You can use an application template to generate a new version of the example app
 To build the "rails-prelaunch-signup" example application, run the command:
 
 <pre>
-rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails-prelaunch-signup-template.rb -T@
+rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails-prelaunch-signup-template.rb -T
 </pre>
   
 Use the @-T@ flag to skip Test::Unit files.
