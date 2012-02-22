@@ -1,6 +1,8 @@
 h1. Rails Prelaunch Signup for a Startup
 
-Example "beta launching soon" application for Rails 3.2 that shows how to create a Rails application for a startup prelaunch signup site.
+Rails 3.2 "beta launching soon" example application that shows how to create a Rails application for a startup prelaunch signup site.
+
+*This app is in development. It is not finished. Click GitHub "Watch" to follow progress. Or follow  "@rails_apps":http://twitter.com/rails_apps on Twitter for project announcements.*
 
 You can clone this app or generate a new Rails application from this app's template.
 
@@ -146,45 +148,21 @@ h2. Getting the Application
 
 You have several options for getting the code.
 
-h4. Downloading the Code
+h4. Fork, Clone, or Generate?
+
+_Fork:_ If you'd like to add features (or bug fixes) to improve the app for others to use as a prelaunch signup site, you can fork the GitHub repo and make pull requests. Your code contributions are welcome!
+
+_Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
+
+_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app. _Note: Unfortunately, the application template isn't be available yet. In the meantime, follow the steps in the Tutorial to create your own version of the project._
+
+h4. Clone the Repository
 
 If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
 
 @$ git clone git://github.com/RailsApps/rails-prelaunch-signup.git@
 
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
-
-h4. Using the Ready-Made Application Template
-
-You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
-
-To build the "rails-prelaunch-signup" example application, run the command:
-
-<pre>
-rails new myapp -m https://github.com/RailsApps/rails3-application-templates/raw/master/rails-prelaunch-signup-template.rb -T
-</pre>
-  
-Use the @-T@ flag to skip Test::Unit files.
-
-This creates a new Rails app (with the name @myapp@) on your computer.
-
-The application generator template will ask you for your preferences. To duplicate the example app exactly, choose the following preferences. Choose others to match what you prefer.
-
-Would you like to use Haml instead of ERB? *Yes.*
-Would you like to use RSpec instead of TestUnit? *Yes.*
-Would you like to use factory_girl for test fixtures with RSpec? *Yes.*
-Would you like to use machinist for test fixtures with RSpec? *No.*
-Would you like to use Cucumber for your BDD? *Yes.*
-Would you like to use Guard to automate your workflow? *No.*
-Would you like to enable the LiveReload guard? *No.*
-Would you like to use Devise for authentication? *Yes.*
-Which front-end framework would you like for HTML5 and CSS3? *Twitter Bootstrap*
-Would you like to use 'rails-footnotes' during development? *No.*
-Would you like to set a robots.txt file to ban spiders? *No.*
-
-h4. Use "Recipes" to Customize an Application Template
-
-The "tutorial":https://github.com/RailsApps/rails-prelaunch-signup/wiki/Tutorial shows how a customized application template can be assembled from "recipes." The application template was created using the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development packages.
 
 h4. Please Remember: Edit the README
 
