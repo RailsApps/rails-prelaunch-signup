@@ -154,7 +154,7 @@ _Fork:_ If you'd like to add features (or bug fixes) to improve the app for othe
 
 _Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
 
-_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app. _Note: Unfortunately, the application template isn't be available yet. In the meantime, follow the steps in the Tutorial to create your own version of the project._
+_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app. _Note: Unfortunately, the application template isn't available yet. In the meantime, follow the steps in the Tutorial to create your own version of the project._
 
 h4. Clone the Repository
 
