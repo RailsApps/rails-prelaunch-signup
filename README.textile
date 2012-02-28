@@ -150,7 +150,7 @@ You have several options for getting the code.
 
 h4. Fork, Clone, or Generate?
 
-_Fork:_ If you'd like to add features (or bug fixes) to improve the app for others to use as a prelaunch signup site, you can fork the GitHub repo and make pull requests. Your code contributions are welcome!
+_Fork:_ If you'd like to add features (or bug fixes) to improve the app for others to use as a prelaunch signup site, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
 
 _Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
 
