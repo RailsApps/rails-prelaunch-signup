@@ -160,7 +160,9 @@ h4. Clone the Repository
 
 If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
 
-@$ git clone git://github.com/RailsApps/rails-prelaunch-signup.git@
+<pre>
+$ git clone git://github.com/RailsApps/rails-prelaunch-signup.git
+</pre>
 
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
