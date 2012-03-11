@@ -12,26 +12,14 @@
  *= require_tree .
 */
 
-@import 'bootstrap';
-
-header nav ul {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
-header nav ul li {
-  display: inline;
-}
-#flash_notice, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-#flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
-
