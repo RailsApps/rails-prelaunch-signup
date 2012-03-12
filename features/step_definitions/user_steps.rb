@@ -30,11 +30,8 @@ end
 def sign_up
   delete_user
   visit '/users/sign_up'
-  fill_in "Name", :with => @visitor[:name]
   fill_in "Email", :with => @visitor[:email]
-  fill_in "Password", :with => @visitor[:password]
-  fill_in "Password confirmation", :with => @visitor[:password_confirmation]
-  click_button "Sign up"
+  click_button "Request Invitation"
   find_user
 end
 
@@ -154,7 +151,7 @@ Then /^I see a successful sign in message$/ do
 end
 
 Then /^I should see a successful sign up message$/ do
-  page.should have_content "A message with a confirmation link has been sent to your email address."
+  page.should have_content "Thank You"
 end
 
 Then /^I should see an invalid email message$/ do
