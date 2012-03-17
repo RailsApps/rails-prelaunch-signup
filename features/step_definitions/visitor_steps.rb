@@ -34,9 +34,9 @@ Then /^my email address should be stored in the database$/ do
   test_user.should respond_to(:email)
 end
 
-Then /^my account should be designated inactive$/ do
+Then /^my account should be unconfirmed$/ do
   test_user = User.find_by_email("example@example.com")
-  test_user.active.should be_false
+  test_user.confirmed_at.should be_nil
 end
 
 When /^I request an invitation with valid user data$/ do

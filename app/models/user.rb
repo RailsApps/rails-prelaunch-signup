@@ -5,31 +5,24 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :active
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at
+
+  after_create :send_welcome_email
+
+  # override Devise method
+  def confirmation_required?
+    false
+  end
 
   # override Devise method
   def active_for_authentication?
-    super && active?
+    confirmed? || confirmation_period_valid?
   end
+  
+  private
 
-  # override Devise method
-  def inactive_message
-    if !active?
-      :inactive
-    else
-      super
-    end
-  end
-
-  # override Devise method
-  def self.send_reset_password_instructions(attributes={})
-    recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
-    if !recoverable.active?
-      recoverable.errors[:base] << I18n.t("devise.failure.inactive")
-    elsif recoverable.persisted?
-      recoverable.send_reset_password_instructions
-    end
-    recoverable
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver
   end
 
 end

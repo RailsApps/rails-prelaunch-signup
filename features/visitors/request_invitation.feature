@@ -19,7 +19,7 @@ Feature: Request Invitation
     When I request an invitation with valid user data
     Then I should see a message "Thank You"
     And my email address should be stored in the database
-    And my account should be designated inactive
+    And my account should be unconfirmed
     And I should receive an email with subject "Request Received"
 
   Scenario: User signs up with invalid email
