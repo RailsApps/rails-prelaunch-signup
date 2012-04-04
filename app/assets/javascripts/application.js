@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+// display validation errors for the "request invitation" form
+$('document').ready(function() {
+  if ($('#error_explanation').length > 0) {
+    $("#request-invite").modal('toggle');
+  }
+})

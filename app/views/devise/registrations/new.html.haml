@@ -1,10 +1,19 @@
-%h2 Request Invitation
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %input{:type=>'hidden', :name=>"user[password]", :value=>'please'}
-  %p
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %p= f.submit "Request Invitation"
-= render "links"
+#request-invite.modal{:style => "display: none;"}
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3 Request Invitation
+    .modal-body
+      = devise_error_messages!
+      %input{:type=>'hidden', :name=>"user[password]", :value=>'please'}
+      %p
+        = f.label :email
+        %br/
+        = f.email_field :email
+    .modal-footer
+      = f.submit "Request Invitation", :class => "btn.btn-success"
+      %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+#romance-copy{:style => "text-align: center; margin-top: 100px"}
+  %h2 Want in?
+#call-to-action{:style => "text-align: center; margin-top: 100px"}
+  %a.btn.btn-primary.btn-large{"data-toggle" => "modal", :href => "#request-invite"} Request invite
