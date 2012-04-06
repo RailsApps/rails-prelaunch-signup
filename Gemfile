@@ -13,6 +13,7 @@ gem "haml", ">= 3.1.4"
 gem "devise", ">= 2.0.4"
 gem "devise_invitable", ">= 1.0.0"
 gem "bootstrap-sass", ">= 2.0.1"
+gem "simple_form", "~> 2.0"
 
 group :development, :test do
   gem "rspec-rails", ">= 2.8.1"
