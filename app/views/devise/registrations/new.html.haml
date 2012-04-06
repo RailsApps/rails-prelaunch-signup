@@ -1,4 +1,4 @@
-#request-invite.modal{:style => "display: none;"}
+#request-invite.modal{:style => "display: #{@user.errors.any? ? 'block' : 'none'};"}
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     .modal-header
       %a.close{"data-dismiss" => "modal"} ×
@@ -11,8 +11,9 @@
         %br/
         = f.email_field :email
     .modal-footer
-      = f.submit "Request Invitation", :class => "btn.btn-success"
+      = f.submit "Request Invitation", :class => "btn.btn-success", :id => 'invitation_button'
       %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+
 #romance-copy{:style => "text-align: center; margin-top: 100px"}
   %h2 Want in?
 #call-to-action{:style => "text-align: center; margin-top: 100px"}

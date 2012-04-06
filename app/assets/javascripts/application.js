@@ -20,4 +20,19 @@ $('document').ready(function() {
   if ($('#error_explanation').length > 0) {
     $("#request-invite").modal('toggle');
   }
+
+  $('#invitation_button').live('click', function() {
+    var email = $('form #user_email').val();
+    var password = $('form #user_password').val();
+    var dataString = 'user[email]='+ email + '&user[password]=' + password;
+    $.ajax({
+      type: "POST",
+      url: "/users",
+      data: dataString,
+      success: function(data) {
+        $('#request-invite').html(data);
+      }
+    });
+    return false;
+  });
 })
