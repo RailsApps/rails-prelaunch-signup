@@ -5,8 +5,8 @@
       %h3 Request Invitation
     .modal-body
       = f.error_notification
-      = f.input :password, :as => :hidden
-      = f.input :email
+      = f.hidden_field :password, :value => 'please'
+      = f.input :email, :placeholder => 'user@example.com'
     .modal-footer
       = f.submit "Request Invitation", :class => "btn.btn-success", :id => 'invitation_button'
       %a.btn{"data-dismiss" => "modal", :href => "#"} Close
