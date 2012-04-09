@@ -15,12 +15,15 @@
 //= require bootstrap
 //= require_tree .
 
-// display validation errors for the "request invitation" form
+
 $('document').ready(function() {
+  
+  // display validation errors for the "request invitation" form
   if ($('#error_explanation').length > 0) {
     $("#request-invite").modal('toggle');
   }
-
+  
+  // use AJAX to submit the "request invitation" form
   $('#invitation_button').live('click', function() {
     var email = $('form #user_email').val();
     var password = $('form #user_password').val();
@@ -35,4 +38,5 @@ $('document').ready(function() {
     });
     return false;
   });
+  
 })
