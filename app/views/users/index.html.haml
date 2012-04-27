@@ -1,0 +1,6 @@
+%h2 Users
+- @users.each do |user|
+  %br/
+  #{link_to user.email, user} signed up #{user.created_at.to_date}
+
+= will_paginate

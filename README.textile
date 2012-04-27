@@ -59,7 +59,7 @@ so I can be notified when the site is launched
 *See Invitation Requests*
 As the owner of the site
 I want to view a list of visitors who have requested invitations
-so I can know if my offer is gaining traction
+so I can know if my offer is popular
 
 *Collect Email Addresses*
 As the owner of the site
