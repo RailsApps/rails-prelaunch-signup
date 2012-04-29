@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.paginate :page => params[:page], :order => "created_at DESC"
+    @users = User.paginate :page => params[:page]
     @chart = create_chart
   end
   
