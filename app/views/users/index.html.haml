@@ -1,12 +1,17 @@
 - content_for :head do
   = javascript_include_tag 'http://www.google.com/jsapi'
-
+%h2 Users
 #chart{:style => "width: 700px; height: 240px;"}
 = render_chart @chart, 'chart'
-  
-%h2 Users
-- @users.each do |user|
-  %br/
-  #{link_to user.email, user} signed up #{user.created_at.to_date}
-
-= will_paginate
+%br
+.span9  
+  %table.datatable.table.table-bordered.table-condensed.span6
+    %thead
+      %tr
+        %th Email
+        %th Signed up
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td #{link_to user.email, user}
+          %td #{user.created_at.to_date}
