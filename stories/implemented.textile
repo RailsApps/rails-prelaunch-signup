@@ -8,7 +8,12 @@ As the owner of the site
 I want to view a list of visitors who have requested invitations
 so I can know if my offer is popular
 
+*Send Invitations*
+As the owner of the site
+I want to send invitations to visitors who have requested invitations
+so users can try the site
+
 *Collect Email Addresses*
 As the owner of the site
 I want to collect email addresses for a mailing list
-so I can send an announcement when I launch the site
+so I can send announcements before I launch the site

@@ -10,8 +10,10 @@
       %tr
         %th Email
         %th Signed up
+        %th Send Invitation
     %tbody
       - @users.each do |user|
         %tr
           %td #{link_to user.email, user}
           %td #{user.created_at.to_date}
+          %td #{link_to "send invitation", invite_user_path(user)}

@@ -11,6 +11,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def invite
+    authorize! :invite, @user, :message => 'Not authorized as an administrator.'
+    @user = User.find(params[:id])
+    @user.send_confirmation_instructions
+    redirect_to :back, :notice => "Sent invitation to #{@user.email}."
+  end
+  
   private
   
   def create_chart
