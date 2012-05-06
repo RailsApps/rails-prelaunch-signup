@@ -197,7 +197,7 @@ $ git clone git://github.com/RailsApps/rails-prelaunch-signup.git
 
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
-h3. Please Remember: Edit the README
+h4. Please Remember: Edit the README
 
 If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
 
@@ -302,15 +302,15 @@ Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios a
 
 h2. Documentation and Support
 
-This and the "tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html) are the only documentation.
+This and the "tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html are the only documentation.
 
 For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
 
-h3. Issues
+h4. Issues
 
 Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues if you identify any problems or have suggestions for improvements.
 
-h3. Where to Get Help
+h4. Where to Get Help
 
 Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
 
@@ -333,6 +333,6 @@ and tweet some praise. I'd love to know you were helped out by what I've put tog
 
 h2. License
 
-h3. Public Domain Dedication
+h4. Public Domain Dedication
 
 This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
