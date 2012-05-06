@@ -1,12 +1,16 @@
-h1.Rails App for a Startup Prelaunch Signup Site
+h1. Rails App for a Startup Prelaunch Signup Site
 
 Rails 3.2 "beta launching soon" example application that shows how to create a Rails application for a startup prelaunch signup site.
-
-*This app is in development. It is not finished. Click GitHub "Watch" to follow progress. Or follow  "@rails_apps":http://twitter.com/rails_apps on Twitter for project announcements.*
 
 You can clone this app or generate a new Rails application from this app's template.
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
+
+Read an "interview with Michael Gajda of XPlaygrounds.com":http://blog.railsapps.org/post/22543541226/powered-up-by-the-railsapps-project-xplaygrounds-com about how he used the "rails-prelaunch-signup":http://github.com/RailsApps/rails-prelaunch-signup/ example to launch his startup site. If you launch a site using this example, add your link to the list of "Rails Applications Built from the Examples":http://railsapps.github.com/rails-applications-from-examples.html. 
+
+h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
+
+Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
 
 h2. Introduction
 
@@ -46,23 +50,17 @@ This application is based on two of the RailsApps example apps:
 * "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber 
 * "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan
 
-The rails3-devise-rspec-cucumber app shows how to set up Devise for user authentication, explaining how to integrate RSpec and Cucumber for testing. The rails3-bootstrap-devise-cancan app shows how to set up Devise and add CanCan to manage access to administrative pages. You can use this tutorial without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
+The rails3-devise-rspec-cucumber app shows how to set up Devise for user authentication, explaining how to integrate RSpec and Cucumber for testing. The rails3-bootstrap-devise-cancan app shows how to set up Devise and add CanCan to manage access to administrative pages. You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
 
 Look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example if you want to use the MongoDB datastore instead of ActiveRecord and a SQL database.
 
 Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
-h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
-
-Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
-
-Add your prelaunch site to this list when you're done: "Rails Applications Built from the RailsApps Examples":http://railsapps.github.com/rails-applications-from-examples.html.
-
 h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
-h3. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
+h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
 
