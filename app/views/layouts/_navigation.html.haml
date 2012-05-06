@@ -9,6 +9,9 @@
   - if user_signed_in?
     %li
       = link_to('Edit account', edit_user_registration_path)
+    - if current_user.has_role? :admin
+      %li
+        = link_to('Admin', users_path)
   - else
     %li
       = link_to('Sign up', new_user_registration_path)
