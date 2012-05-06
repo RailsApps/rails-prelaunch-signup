@@ -1,4 +1,4 @@
-h1. Rails Prelaunch Signup for a Startup
+h1.Rails App for a Startup Prelaunch Signup Site
 
 Rails 3.2 "beta launching soon" example application that shows how to create a Rails application for a startup prelaunch signup site.
 
@@ -6,15 +6,49 @@ Rails 3.2 "beta launching soon" example application that shows how to create a R
 
 You can clone this app or generate a new Rails application from this app's template.
 
-This application is for Rails developers who want to build and deploy their own prelaunch site. The application is very simple and any experienced Rails developer could easily build it. The aim of the project is to eliminate individual effort spent building an application that meets a common need. As an open source project, you can use code that is already implemented and tested. Your individual effort can be better applied to add features to your prelaunch app, customize the look and functionality of your prelaunch site, and get started on a real application for a launch.
-
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
 
-"Devise":http://github.com/plataformatec/devise gives us ready-made authentication and user management. It is easy to build "authentication from scratch":http://railscasts.com/episodes/250-authentication-from-scratch for a Rails application. It is even easier to build an application that simply saves email addresses to a database. We'll use Devise because it offers a full set of features used in more complex applications, such as recovering a user's forgotten password. By using Devise for the prelaunch signup application, you can use the same user database for a post-launch site.
+h2. Introduction
 
-Devise handles signing up users through a registration feature. We use the Devise registration process to collect email addresses and create user accounts. Instead of confirming an email address immediately, we email a "thank you for your request" acknowledgment and mark the user account as "inactive." When you are ready to invite users to try your site (either in beta or post-launch) you can mark the account as "active" and send the user an email invitation.
+The initial app for a typical web startup announces the founders' plans and encourages visitors to enter an email address for future notification of the site's launch. It's not difficult to build such an app in Rails.
 
-This app uses the "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber  example app as a starter app. You can see a "tutorial for the rails3-devise-rspec-cucumber example app":http://railsapps.github.com/tutorial-rails-devise-rspec-cucumber.html to see how the starter app is built.
+But why build it yourself if others have already done so? This project aims to:
+
+* eliminate effort spent building an application that meets a common need;
+* offer code that is already implemented and tested by a large community;
+* provide a well-thought-out app containing most of the features you'll need.
+
+By using code from this project, you'll be able to:
+
+* direct your attention to the design and product offer for your prelaunch site;
+* get started faster building the ultimate application for your business.
+
+The "tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html can help founders who are new to Ruby on Rails to learn how to build a real-world Rails web application.
+
+h3. Why We Use Devise
+
+We've chosen to use the "Devise":http://github.com/plataformatec/devise gem for our authentication and user management. We use Devise because it offers a full set of features used in more complex applications, such as recovering a user's forgotten password or allowing users to invite friends. By using Devise for the prelaunch signup application, you can use the same user database for your post-launch product. You'll also have the benefit of receiving help from a large community of developers using Devise, should you need help in troubleshooting or customizing the implementation.
+
+h3. How We Configure Devise
+
+Devise offers many features and configuration choices; in fact, exploring its options can take more time than actually implementing authentication from scratch. This app will save you time; we've selected the configuration that best accommodates a typical web startup signup site.
+
+Devise handles signing up users through a registration feature. We use the Devise registration process to collect email addresses and create user accounts. Instead of confirming an email address immediately, we email a "thank you for your request" acknowledgment and postpone the email confirmation step. When you are ready to invite users to the site, the app provides an administrative interface so you can select users to receive an invitation that instructs them to confirm their email address and set a password.
+
+The "Devise wiki":https://github.com/plataformatec/devise/wiki and "answers on Stack Overflow":http://stackoverflow.com/questions/tagged/devise can help you alter this implementation if you need different functionality.
+
+h3. RailsApps Examples and Tutorials
+
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/.
+
+This application is based on two of the RailsApps example apps:
+
+* "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber 
+* "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan
+
+The rails3-devise-rspec-cucumber app shows how to set up Devise for user authentication, explaining how to integrate RSpec and Cucumber for testing. The rails3-bootstrap-devise-cancan app shows how to set up Devise and add CanCan to manage access to administrative pages. You can use this tutorial without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
+
+Look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example if you want to use the MongoDB datastore instead of ActiveRecord and a SQL database.
 
 Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
@@ -28,15 +62,11 @@ h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
-h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
+h3. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
-
-h4. Similar Examples and Tutorials
-
-See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
 
 h2. What Is Implemented — and What Is Not
 
@@ -44,11 +74,9 @@ Currently, the application only serves to display a landing page with a form for
 
 If there is interest, the author and contributors will implement additional features. See below for a list of implemented and proposed user stories.
 
-h4. User Stories (Implemented)
+h3. User Stories (Implemented)
 
-You can see a "list of user stories":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/implemented.textile that have been implemented.
-
-Here are some user stories that have been implemented:
+YHere are some user stories that have been implemented:
 
 <pre>
 *Request Invitation*
@@ -61,15 +89,20 @@ As the owner of the site
 I want to view a list of visitors who have requested invitations
 so I can know if my offer is popular
 
+*Send Invitations*
+As the owner of the site
+I want to send invitations to visitors who have requested invitations
+so users can try the site
+
 *Collect Email Addresses*
 As the owner of the site
 I want to collect email addresses for a mailing list
-so I can send an announcement when I launch the site
+so I can send announcements before I launch the site
 </pre>
 
-h4. User Stories (Not Implemented)
+h3. User Stories (Not Implemented)
 
-You can see a list of user stories that have "not been implemented":https://github.com/RailsApps/rails-prelaunch-signup/blob/master/stories/unimplemented.textile. If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
 Here are some user stories that have not been implemented. If you implement any of these, please contribute your code to the project with a pull request.
 
@@ -95,7 +128,7 @@ I want to view the "Contact" page
 so I can contact the owner of the site
 </pre>
 
-h4. Articles and Discussion
+h3. Articles and Discussion
 
 Here are some articles that describe the purpose and options for a startup prelaunch page:
 
@@ -105,7 +138,7 @@ Here are some articles that describe the purpose and options for a startup prela
 
 Have other suggestions? Please create an issue with your suggestion or email the author.
 
-h4. Similar Projects
+h3. Similar Projects
 
 You can find other projects on GitHub that offer similar functionality.
 
@@ -117,7 +150,7 @@ You can find other projects on GitHub that offer similar functionality.
 
 Found others? Please create an issue with your suggestion or email the author.
 
-h4. Hosted Services
+h3. Hosted Services
 
 Here are hosted services that offer similar functionality and more features.
 
@@ -129,7 +162,7 @@ Here are hosted services that offer similar functionality and more features.
 
 "Unbounce":http://unbounce.com/ - create, publish & A/B test landing pages
 
-h4. WordPress Themes
+h3. WordPress Themes
 
 WordPress themes are a popular way to stage a startup prelaunch page.
 
@@ -148,7 +181,7 @@ h2. Getting the Application
 
 You have several options for getting the code.
 
-h4. Fork, Clone, or Generate?
+h3. Fork, Clone, or Generate?
 
 _Fork:_ If you'd like to add features (or bug fixes) to improve the app for others to use as a prelaunch signup site, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
 
@@ -156,7 +189,7 @@ _Clone:_ If you want to copy and customize the app with changes that are only us
 
 _Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app. _Note: Unfortunately, the application template isn't available yet. In the meantime, follow the steps in the Tutorial to create your own version of the project._
 
-h4. Clone the Repository
+h3. Clone the Repository
 
 If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
 
@@ -166,13 +199,13 @@ $ git clone git://github.com/RailsApps/rails-prelaunch-signup.git
 
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
-h4. Please Remember: Edit the README
+h3. Please Remember: Edit the README
 
 If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
 
 h2. Getting Started
 
-h4. About Required Gems
+h3. About Required Gems
 
 The application uses the following gems:
 
@@ -184,7 +217,7 @@ The application uses the following gems:
 * "capybara":http://rubygems.org/gems/capybara
 * "devise":http://rubygems.org/gems/devise
 
-h4. Install the Required Gems
+h3. Install the Required Gems
 
 Install the required gems on your computer:
 
@@ -196,7 +229,7 @@ You can check which gems are installed on your computer with:
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
-h4. Set Up Configuration for Devise
+h3. Set Up Configuration for Devise
 
 This app uses "Devise":http://github.com/plataformatec/devise for user management and authentication.
 
@@ -204,7 +237,7 @@ You can modify the configuration file for Devise if you want to use something ot
 
 *config/initializers/devise.rb*
 
-h4. Configure Email for Devise
+h3. Configure Email for Devise
 
 Configure email by modifying
 
@@ -219,7 +252,7 @@ You may need to set values for your mailhost in
 
 h2. Create a Default User
 
-h4. Set Up a Database Seed File
+h3. Set Up a Database Seed File
 
 You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
 
@@ -231,14 +264,14 @@ puts 'New user created: ' << user.name
 
 Use the defaults or change the values for name, email, and password as you wish.
 
-h4. Seed the Database
+h3. Seed the Database
 
 Add the default user to the database by running the command:
 
 @$ rake db:migrate@
 @$ rake db:seed@
 
-h4. Test the App
+h3. Test the App
 
 You can check that your app runs properly by entering the command
 
@@ -271,15 +304,15 @@ Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios a
 
 h2. Documentation and Support
 
-This is the only documentation.
+This and the "tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html) are the only documentation.
 
 For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
 
-h4. Issues
+h3. Issues
 
 Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues if you identify any problems or have suggestions for improvements.
 
-h4. Where to Get Help
+h3. Where to Get Help
 
 Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
 
@@ -302,6 +335,6 @@ and tweet some praise. I'd love to know you were helped out by what I've put tog
 
 h2. License
 
-h4. Public Domain Dedication
+h3. Public Domain Dedication
 
 This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
