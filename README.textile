@@ -1,4 +1,4 @@
-h1. Rails App for a Startup Prelaunch Signup Site
+h1. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Rails App for a Startup Prelaunch Signup Site
 
 Rails 3.2 "beta launching soon" example application that shows how to create a Rails application for a startup prelaunch signup site.
 
@@ -56,7 +56,7 @@ Look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devi
 
 Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
 
-h2. !http://railsapps.github.com/images/rails-36x36.jpg(Tutorial)! Tutorial
+h2. Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
 
