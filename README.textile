@@ -6,6 +6,8 @@ You can clone this app or generate a new Rails application from this app's templ
 
 Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
 
+!http://railsapps.github.com/images/rails-prelaunch-signup.png(Rails Application for a Startup Prelaunch Signup Site)!
+
 Read an "interview with Michael Gajda":http://blog.railsapps.org/post/22543541226/powered-up-by-the-railsapps-project-xplaygrounds-com of "XPlaygrounds.com":http://xplaygrounds.com/ about how he used the "rails-prelaunch-signup":http://github.com/RailsApps/rails-prelaunch-signup/ example to launch his startup site. If you launch a site using this example, add your link to the list of "Rails Applications Built from the Examples":http://railsapps.github.com/rails-applications-from-examples.html. 
 
 h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
