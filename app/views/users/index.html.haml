@@ -20,7 +20,7 @@
         %tr
           %td #{link_to user.email, user}
           %td #{user.created_at.to_date}
-          %td #{user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user)) : (link_to "resend", invite_user_path(user)) }
+          %td #{(user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user)) : (link_to "resend", invite_user_path(user))) unless user.confirmed_at}
           %td #{user.confirmed_at.to_date if user.confirmed_at}
           %td #{user.sign_in_count if user.sign_in_count}
           %td #{user.last_sign_in_at.to_date if user.last_sign_in_at}
