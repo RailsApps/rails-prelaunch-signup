@@ -1,19 +1,26 @@
 - content_for :head do
   = javascript_include_tag 'http://www.google.com/jsapi'
 %h2 Users
-#chart{:style => "width: 700px; height: 240px;"}
-= render_chart @chart, 'chart'
-%br
-.span9  
+.span9
+  #chart{:style => "width: 700px; height: 240px"}
+  = render_chart @chart, 'chart'
+  %br
+.span9
   %table.datatable.table.table-bordered.table-condensed
     %thead
       %tr
         %th Email
-        %th Signed up
-        %th Send Invitation
+        %th Requested
+        %th Invitation
+        %th Joined
+        %th Visits
+        %th Most Recent
     %tbody
       - @users.each do |user|
         %tr
           %td #{link_to user.email, user}
           %td #{user.created_at.to_date}
-          %td #{link_to "send invitation", invite_user_path(user)}
+          %td #{user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user)) : (link_to "resend", invite_user_path(user)) }
+          %td #{user.confirmed_at.to_date if user.confirmed_at}
+          %td #{user.sign_in_count if user.sign_in_count}
+          %td #{user.last_sign_in_at.to_date if user.last_sign_in_at}
