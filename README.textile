@@ -76,7 +76,7 @@ If there is interest, the author and contributors will implement additional feat
 
 h3. User Stories (Implemented)
 
-YHere are some user stories that have been implemented:
+Here are some user stories that have been implemented:
 
 <pre>
 *Request Invitation*
