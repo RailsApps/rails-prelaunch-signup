@@ -27,7 +27,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    '/thankyou.html'
+    # the page new users will see after sign up (after launch, when no invitation is needed)
+    redirect_to root_path
   end
 
 end
