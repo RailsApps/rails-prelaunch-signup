@@ -1,0 +1,7 @@
+<p>Welcome <%= @resource.email %>!</p>
+
+<p>We're pleased to invite you to try <%= link_to 'example.com', root_url %>.</p>
+
+<p>Please click the link below to confirm your email address and set your password:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>

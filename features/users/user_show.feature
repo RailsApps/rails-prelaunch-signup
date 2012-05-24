@@ -3,4 +3,3 @@ Feature: Show Users
   I want to see registered users listed on the homepage
   so I can know if the site has users
 
-
