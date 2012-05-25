@@ -1,6 +1,8 @@
 Given /^I am logged in as an administrator$/ do
-  create_user
-  @user.add_role :admin
+  @admin = FactoryGirl.create(:user, email: "admin@example.com")
+  @admin.add_role :admin
+  @visitor ||= { :email => "admin@example.com",
+    :password => "please", :password_confirmation => "please" }
   sign_in
 end
 
@@ -18,4 +20,8 @@ end
 
 Then /^I should see an access denied message$/ do
   page.should have_content "Not authorized as an administrator"
+end
+
+Then /^show me the page$/ do
+  save_and_open_page
 end
