@@ -143,7 +143,7 @@ Then /^I should be signed out$/ do
 end
 
 Then /^I see an unconfirmed account message$/ do
-  page.should have_content "Your account is not active."
+  page.should have_content "You have to confirm your account before continuing."
 end
 
 Then /^I see a successful sign in message$/ do
