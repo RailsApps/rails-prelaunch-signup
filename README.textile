@@ -14,7 +14,7 @@ Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Plea
 
 h2. Introduction
 
-The initial app for a typical web startup announces the founders' plans and encourages visitors to enter an email address for future notification of the site's launch. It's not difficult to build such an app in Rails.
+The initial app for a typical web startup announces the founders' plans and encourages visitors to enter an email address for future notification of the site launch. It's not difficult to build such an app in Rails.
 
 But why build it yourself if others have already done so? This project aims to:
 
@@ -86,23 +86,23 @@ h2. Alternatives
 
 This is an application for Rails developers who wish to deploy their own app. It is a good stepping stone to building a more complex application for your startup. 
 
-If you do not wanr to build an application, or you are not a Rails developer, you may wish to consider alternatives.
+If you do not want to build an application, or you are not a Rails developer, you may wish to consider alternatives.
 
 h3. Hosted Services
 
-"LaunchRock":http://launchrock.com/ - set up a social launching-soon page in minutes
+"LaunchRock":http://launchrock.com/ - "set up a social launching-soon page in minutes"
 
-"KickoffLabs":http://www.kickofflabs.com/ - viral landing pages you'll love in 60 seconds
+"KickoffLabs":http://www.kickofflabs.com/ - "viral landing pages you'll love in 60 seconds"
 
-"Prefinery":http://www.prefinery.com/ - complete beta management platform that encourages social sharing
+"Prefinery":http://www.prefinery.com/ - "complete beta management platform that encourages social sharing"
 
-"Unbounce":http://unbounce.com/ - create, publish & A/B test landing pages
+"Unbounce":http://unbounce.com/ - "create, publish & A/B test landing pages"
 
 h3. WordPress Themes
 
 WordPress themes are a popular way to stage a startup prelaunch page.
 
-"Launch Effect":http://launcheffectapp.com/ - a WordPress theme for viral launches
+"Launch Effect":http://launcheffectapp.com/ - "a WordPress theme for viral launches"
 
 h3. Similar Projects
 
@@ -135,11 +135,13 @@ This application is based on two of the RailsApps example apps:
 * "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber 
 * "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan
 
-The rails3-devise-rspec-cucumber app shows how to set up Devise for user authentication, explaining how to integrate RSpec and Cucumber for testing. The rails3-bootstrap-devise-cancan app shows how to set up Devise and add CanCan to manage access to administrative pages. You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
+The first example shows how to set up Devise for user authentication. It also shows how to set up the app to use RSpec and Cucumber for testing. 
 
-Look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example if you want to use the MongoDB datastore instead of ActiveRecord and a SQL database.
+The second example shows how to set up Devise and add CanCan to manage access to administrative pages. It also shows how to set up Twitter Bootstrap as a front-end framework for CSS styling. 
 
-Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
+
+If you want to use the MongoDB datastore instead of ActiveRecord and a SQL database, look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example.
 
 h2. Tutorial
 
@@ -159,6 +161,31 @@ Before generating your application, you will need:
 * Rails 3.2
 
 See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
+
+h2. Accounts You May Need
+
+Before you start, you may need to set up accounts for hosting and email.
+
+h3. Hosting
+
+For easy deployment, use a "platform as a service" provider such as:
+
+* "Heroku":http://www.heroku.com/
+* "CloudFoundry":http://www.cloudfoundry.com/
+* "EngineYard":http://www.engineyard.com/
+* "OpenShift":https://openshift.redhat.com/app/
+
+Instructions are provided for deployment to Heroku.
+
+h3. Transactional Email
+
+For simple testing of email, it's easy to use Gmail to send email messages from the application. For deployment, when the application must send dozens or thousands of acknowledgments or invitations, you will need a hosted SMTP relay service (also known as an ESP or "email service provider"). This tutorial provides instructions for "Mandrill by MailChimp":http://mandrill.com/. The Mandrill transactional email service integrates well with the MailChimp email list manager service. Plus, you can send up to 12,000 emails/month from the service for free.
+
+Sign up for a MailChimp account to get started. After you've created your MailChimp account, see the instructions to "Use Mandrill with MailChimp":http://help.mandrill.com/customer/portal/articles/464750-use-mandrill-with-mailchimp to add the Mandrill service. Make sure you "Verify a Sending Domain":http://help.mandrill.com/customer/portal/articles/464811-verify-a-sending-domain and get the "Access Information":http://help.mandrill.com/customer/portal/articles/464828-access-information (your SMTP username and password, which is an API key).
+
+h3. Mailing List
+
+In addition to sending transactional email messages, you likely will want to send newsletters or announcements to your entire mailing list. This tutorial shows how to add visitors who request an invitation to a "MailChimp":http://mailchimp.com/ list. MailChimp allows you to send up to 12,000 emails/month to list of 2000 or fewer subscribers for free. After you sign up for a MailChimp account, get your API key. Look under "Account" for "API Keys and Authorized Apps." Note that the Mandrill API key (which you get on the "mandrill.com":http://mandrill.com/ site) is different from the MailChimp API key (which you get on the "mailchimp.com":http://mailchimp.com/ site).
 
 h2. Getting the Application
 
