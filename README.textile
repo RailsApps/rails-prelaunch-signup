@@ -79,6 +79,7 @@ h4. Unimplemented
 * A/B testing of offers
 * advanced analytics
 * "about" and "contact" pages
+* Google analytics
 
 If you add features or improve the implementation, please consider contributing by submitting an issue or pull request from your fork.
 
