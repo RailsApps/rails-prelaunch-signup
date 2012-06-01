@@ -1,8 +1,8 @@
 h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails App for a Startup Prelaunch Signup Site)! Rails App for a Startup Prelaunch Signup Site
 
-Rails 3.2 "beta launching soon" example application that shows how to create a Rails application for a startup prelaunch signup site.
+Rails 3.2 example application for a “beta launching soon” startup prelaunch signup site.
 
-Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
+With a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
 
 !http://railsapps.github.com/images/xplaygrounds-screenshot.png(Rails Application for a Startup Prelaunch Signup Site)!
 
