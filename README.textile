@@ -74,7 +74,7 @@ h4. Tutorial shows how to:
 
 h4. Unimplemented
 
-* asynchronous processing for transactional email and MailChimp list capture
+* queuing (asynchronous processing) for transactional email and MailChimp list capture
 * caching
 * A/B testing of offers
 * advanced analytics
