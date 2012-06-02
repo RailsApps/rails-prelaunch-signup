@@ -1,10 +1,8 @@
 h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails App for a Startup Prelaunch Signup Site)! Rails App for a Startup Prelaunch Signup Site
 
-Rails 3.2 "beta launching soon" example application that shows how to create a Rails application for a startup prelaunch signup site.
+Rails 3.2 example application for a “beta launching soon” startup prelaunch signup site.
 
-You can clone this app or generate a new Rails application from this app's template.
-
-Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
+With a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
 
 !http://railsapps.github.com/images/xplaygrounds-screenshot.png(Rails Application for a Startup Prelaunch Signup Site)!
 
@@ -16,7 +14,7 @@ Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Plea
 
 h2. Introduction
 
-The initial app for a typical web startup announces the founders' plans and encourages visitors to enter an email address for future notification of the site's launch. It's not difficult to build such an app in Rails.
+The initial app for a typical web startup announces the founders' plans and encourages visitors to enter an email address for future notification of the site launch. It's not difficult to build such an app in Rails.
 
 But why build it yourself if others have already done so? This project aims to:
 
@@ -31,112 +29,81 @@ By using code from this project, you'll be able to:
 
 The "tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html can help founders who are new to Ruby on Rails to learn how to build a real-world Rails web application.
 
-h3. Why We Use Devise
-
-We've chosen to use the "Devise":http://github.com/plataformatec/devise gem for our authentication and user management. We use Devise because it offers a full set of features used in more complex applications, such as recovering a user's forgotten password or allowing users to invite friends. By using Devise for the prelaunch signup application, you can use the same user database for your post-launch product. You'll also have the benefit of receiving help from a large community of developers using Devise, should you need help in troubleshooting or customizing the implementation.
-
-h3. How We Configure Devise
-
-Devise offers many features and configuration choices; in fact, exploring its options can take more time than actually implementing authentication from scratch. This app will save you time; we've selected the configuration that best accommodates a typical web startup signup site.
-
-Devise handles signing up users through a registration feature. We use the Devise registration process to collect email addresses and create user accounts. Instead of confirming an email address immediately, we email a "thank you for your request" acknowledgment and postpone the email confirmation step. When you are ready to invite users to the site, the app provides an administrative interface so you can select users to receive an invitation that instructs them to confirm their email address and set a password.
-
-The "Devise wiki":https://github.com/plataformatec/devise/wiki and "answers on Stack Overflow":http://stackoverflow.com/questions/tagged/devise can help you alter this implementation if you need different functionality.
-
-h3. RailsApps Examples and Tutorials
-
-This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/.
-
-This application is based on two of the RailsApps example apps:
-
-* "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber 
-* "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan
-
-The rails3-devise-rspec-cucumber app shows how to set up Devise for user authentication, explaining how to integrate RSpec and Cucumber for testing. The rails3-bootstrap-devise-cancan app shows how to set up Devise and add CanCan to manage access to administrative pages. You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
-
-Look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example if you want to use the MongoDB datastore instead of ActiveRecord and a SQL database.
-
-Any issues? Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
-
-h2. Tutorial
-
-A complete walkthrough tutorial is available on the GitHub wiki:
-
-h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
-
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
-
-If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
-
 h2. What Is Implemented — and What Is Not
 
-Currently, the application only serves to display a landing page with a form for visitors to request invitations. Visitors' email addresses are collected in the application's database. An administrator can view the collected email addresses.
+This is a complete and fully functional application.
 
-If there is interest, the author and contributors will implement additional features. See below for a list of implemented and proposed user stories.
+h4. For the user:
 
-h3. User Stories (Implemented)
+* an offer with a "request invite" button
+* a "request invitation" form in a modal window
+* "Thank you" acknowledgement includes social sharing buttons (Twitter, Facebook, Google+)
+* visitor receives an email acknowledging their request
+* visitor's request for an invitation creates an "unconfirmed" account
+* a welcome email when a user is invited by a site administrator
+* a link in the welcome email confirms the user's account and sets a password
 
-Here are some user stories that have been implemented:
+h4. For the site owner:
 
-<pre>
-*Request Invitation*
-As a visitor to the website
-I want to request an invitation 
-so I can be notified when the site is launched
+* administrative dashboard page
+* list of all visitors who have requested invitations
+* time-series chart of invitation requests over time
+* site owner can send individual invitations
+* "bulk invitation" feature to send 50, 100, or more invitations
+* see status for any user: "uninvited", "confirmed", "last visit"
 
-*See Invitation Requests*
-As the owner of the site
-I want to view a list of visitors who have requested invitations
-so I can know if my offer is popular
+h4. Implementation details:
 
-*Send Invitations*
-As the owner of the site
-I want to send invitations to visitors who have requested invitations
-so users can try the site
+* Twitter Bootstrap
+* modal window for invitation requests updated by AJAX
+* Javascript updates the modal window for any form submission errors
+* uses an email service provider for transactional email
+* captures visitor email addresses for a MailChimp mailing list
 
-*Collect Email Addresses*
-As the owner of the site
-I want to collect email addresses for a mailing list
-so I can send announcements before I launch the site
-</pre>
+h4. Tutorial shows how to:
 
-h3. User Stories (Not Implemented)
+* write user stories
+* manage a software development process using behavior-driven development (BDD)
+* prepare a specification using Cucumber scenarios
+* create acceptance tests using Cucumber step definitions (with Capybara)
+* use Devise for user management and authentication
+* use CanCan for role-based authorization
+* keep account passwords secret using Unix environment variables
+* use git and GitHub for source control
+* deploy using Heroku
 
-If you have ideas for additional features for this application, edit the file and submit a pull request. Or simply create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues.
+h4. Unimplemented
 
-Here are some user stories that have not been implemented. If you implement any of these, please contribute your code to the project with a pull request.
+* queuing (asynchronous processing) for transactional email and MailChimp list capture
+* caching
+* A/B testing of offers
+* advanced analytics
+* "about" and "contact" pages
+* Google analytics
 
-<pre>
-*Post to Twitter After Sign Up*
-As a user
-I want an option to post to Twitter after I sign up
-so my followers will learn about the site
+If you add features or improve the implementation, please consider contributing by submitting an issue or pull request from your fork.
 
-*Post to Facebook After Sign Up*
-As a user
-I want an option to post to Facebook after I sign up
-so my Facebook friends will learn about the site
+h2. Alternatives
 
-*View "About" Page*
-As a visitor to the website
-I want to view the "About" page
-so I can learn more about what the site will offer
+This is an application for Rails developers who wish to deploy their own app. It is a good stepping stone to building a more complex application for your startup. 
 
-*View "Contact" Page*
-As a visitor to the website
-I want to view the "Contact" page
-so I can contact the owner of the site
-</pre>
+If you do not want to build an application, or you are not a Rails developer, you may wish to consider alternatives.
 
-h3. Articles and Discussion
+h3. Hosted Services
 
-Here are some articles that describe the purpose and options for a startup prelaunch page:
+"LaunchRock":http://launchrock.com/ - "set up a social launching-soon page in minutes"
 
-* "Building An Effective ‘Coming Soon’ Page for Your Product":http://www.smashingmagazine.com/2011/05/24/building-an-effective-coming-soon-page-for-your-product/ from Smashing Magazine
-* "Elements Of A Viral Launch Page":http://spking.com/2011/08/30/roll-your-own-pre-launch-page/ from Smashing Magazine
-* "Which Are the Best Startup Prelaunch Pages?":http://www.quora.com/Which-are-the-best-startup-prelaunch-pages from Quora
+"KickoffLabs":http://www.kickofflabs.com/ - "viral landing pages you'll love in 60 seconds"
 
-Have other suggestions? Please create an issue with your suggestion or email the author.
+"Prefinery":http://www.prefinery.com/ - "complete beta management platform that encourages social sharing"
+
+"Unbounce":http://unbounce.com/ - "create, publish & A/B test landing pages"
+
+h3. WordPress Themes
+
+WordPress themes are a popular way to stage a startup prelaunch page.
+
+"Launch Effect":http://launcheffectapp.com/ - "a WordPress theme for viral launches"
 
 h3. Similar Projects
 
@@ -150,23 +117,42 @@ You can find other projects on GitHub that offer similar functionality.
 
 Found others? Please create an issue with your suggestion or email the author.
 
-h3. Hosted Services
+h3. Articles and Discussion
 
-Here are hosted services that offer similar functionality and more features.
+Here are some articles that describe the purpose and options for a startup prelaunch page:
 
-"LaunchRock":http://launchrock.com/ - set up a social launching-soon page in minutes
+* "Building An Effective ‘Coming Soon’ Page for Your Product":http://www.smashingmagazine.com/2011/05/24/building-an-effective-coming-soon-page-for-your-product/ from Smashing Magazine
+* "Elements Of A Viral Launch Page":http://spking.com/2011/08/30/roll-your-own-pre-launch-page/ from Smashing Magazine
+* "Which Are the Best Startup Prelaunch Pages?":http://www.quora.com/Which-are-the-best-startup-prelaunch-pages from Quora
 
-"KickoffLabs":http://www.kickofflabs.com/ - viral landing pages you'll love in 60 seconds
+Have other suggestions? Please create an issue with your suggestion or email the author.
 
-"Prefinery":http://www.prefinery.com/ - complete beta management platform that encourages social sharing
+h2. RailsApps Examples and Tutorials
 
-"Unbounce":http://unbounce.com/ - create, publish & A/B test landing pages
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.com/.
 
-h3. WordPress Themes
+This application is based on two of the RailsApps example apps:
 
-WordPress themes are a popular way to stage a startup prelaunch page.
+* "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber 
+* "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan
 
-"Launch Effect":http://launcheffectapp.com/ - a WordPress theme for viral launches
+The first example shows how to set up Devise for user authentication. It also shows how to set up the app to use RSpec and Cucumber for testing. 
+
+The second example shows how to set up Devise and add CanCan to manage access to administrative pages. It also shows how to set up Twitter Bootstrap as a front-end framework for CSS styling. 
+
+You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
+
+If you want to use the MongoDB datastore instead of ActiveRecord and a SQL database, look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example.
+
+h2. Tutorial
+
+A complete walkthrough tutorial is available on the GitHub wiki:
+
+h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
+
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
+
+If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
 h2. Dependencies
 
@@ -177,6 +163,31 @@ Before generating your application, you will need:
 
 See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
 
+h2. Accounts You May Need
+
+Before you start, you may need to set up accounts for hosting and email.
+
+h3. Hosting
+
+For easy deployment, use a "platform as a service" provider such as:
+
+* "Heroku":http://www.heroku.com/
+* "CloudFoundry":http://www.cloudfoundry.com/
+* "EngineYard":http://www.engineyard.com/
+* "OpenShift":https://openshift.redhat.com/app/
+
+Instructions are provided for deployment to Heroku.
+
+h3. Transactional Email
+
+For simple testing of email, it's easy to use Gmail to send email messages from the application. For deployment, when the application must send dozens or thousands of acknowledgments or invitations, you will need a hosted SMTP relay service (also known as an ESP or "email service provider"). This tutorial provides instructions for "Mandrill by MailChimp":http://mandrill.com/. The Mandrill transactional email service integrates well with the MailChimp email list manager service. Plus, you can send up to 12,000 emails/month from the service for free.
+
+Sign up for a MailChimp account to get started. After you've created your MailChimp account, see the instructions to "Use Mandrill with MailChimp":http://help.mandrill.com/customer/portal/articles/464750-use-mandrill-with-mailchimp to add the Mandrill service. Make sure you "Verify a Sending Domain":http://help.mandrill.com/customer/portal/articles/464811-verify-a-sending-domain and get the "Access Information":http://help.mandrill.com/customer/portal/articles/464828-access-information (your SMTP username and password, which is an API key).
+
+h3. Mailing List
+
+In addition to sending transactional email messages, you likely will want to send newsletters or announcements to your entire mailing list. This tutorial shows how to add visitors who request an invitation to a "MailChimp":http://mailchimp.com/ list. MailChimp allows you to send up to 12,000 emails/month to list of 2000 or fewer subscribers for free. After you sign up for a MailChimp account, get your API key. Look under "Account" for "API Keys and Authorized Apps." Note that the Mandrill API key (which you get on the "mandrill.com":http://mandrill.com/ site) is different from the MailChimp API key (which you get on the "mailchimp.com":http://mailchimp.com/ site).
+
 h2. Getting the Application
 
 You have several options for getting the code.
@@ -185,13 +196,13 @@ h3. Fork, Clone, or Generate?
 
 _Fork:_ If you'd like to add features (or bug fixes) to improve the app for others to use as a prelaunch signup site, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
 
-_Clone:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
+_Clone or Download:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo or download a zip file. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
 
 _Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app. _Note: Unfortunately, the application template isn't available yet. In the meantime, follow the steps in the Tutorial to create your own version of the project._
 
 h3. Clone the Repository
 
-If you simply wish to examine the example code, you can download the code ("clone the repository") with the command
+If you simply wish to examine the example code, you can download the code ("clone the repository") with the command:
 
 <pre>
 $ git clone git://github.com/RailsApps/rails-prelaunch-signup.git
@@ -199,25 +210,13 @@ $ git clone git://github.com/RailsApps/rails-prelaunch-signup.git
 
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
-h4. Please Remember: Edit the README
+As an alternative, you can download a zip file.
 
-If you're open sourcing the app on GitHub, please edit the README file to add a description of the app and your contact info. Changing the README is important if you're using a clone of the example app. I've been mistaken (and contacted) as the author of apps that are copied from my example.
+h4. Replace the READMEs
 
-h2. Getting Started
+Please edit the README files to add a description of the app and your contact info. Changing the README is important if your app will be publicly visible on GitHub. Otherwise, people will think I am the author of your app (though please leave an acknowledgment and a link to the "RailsApps project":http://railsapps.github.com/ if you like).
 
-h3. About Required Gems
-
-The application uses the following gems:
-
-* "rails":http://rubygems.org/gems/rails
-* "rspec-rails":http://rubygems.org/gems/rspec-rails
-* "database_cleaner":http://rubygems.org/gems/database_cleaner
-* "factory_girl_rails":http://rubygems.org/gems/factory_girl_rails
-* "cucumber-rails":http://rubygems.org/gems/cucumber-rails
-* "capybara":http://rubygems.org/gems/capybara
-* "devise":http://rubygems.org/gems/devise
-
-h3. Install the Required Gems
+h2. Install the Required Gems
 
 Install the required gems on your computer:
 
@@ -229,7 +228,7 @@ You can check which gems are installed on your computer with:
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
-h3. Set Up Configuration for Devise
+h2. Set Up Configuration for Devise
 
 This app uses "Devise":http://github.com/plataformatec/devise for user management and authentication.
 
@@ -237,82 +236,239 @@ You can modify the configuration file for Devise if you want to use something ot
 
 *config/initializers/devise.rb*
 
-h3. Configure Email for Devise
+h2. Configure Email
 
-Configure email by modifying
+You must configure the app for your email account so your application can send email messages, for example, to acknowledge invitation requests or send welcome messages.
+
+The starter app script sets up a default email configuration. You must add details about your email account.
+
+h3. Configure ActionMailer
+
+ActionMailer is configured for development in the *config/environments/development.rb* file:
+
+<pre>
+# ActionMailer Config
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+# change to true to allow email to be sent during development
+config.action_mailer.perform_deliveries = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default :charset => "utf-8"
+</pre>
+
+ActionMailer is configured for production in the *config/environments/production.rb* file:
+
+<pre>
+config.action_mailer.default_url_options = { :host => 'example.com' }
+# ActionMailer Config
+# Setup for production - deliveries, no errors raised
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.default :charset => "utf-8"
+</pre>
+
+ActionMailer is configured for testing in  the *config/environments/test.rb* file:
+
+<pre>
+# ActionMailer Config
+config.action_mailer.default_url_options = { :host => 'example.com' }
+</pre>
+
+This will set the example application to deliver email in production. Email messages are visible in the log file so there is no need to send email in development. The configuration above will raise delivery errors in development but not in production.
+
+In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly during development. 
+
+For testing, @config.action_mailer.default_url_options@ is set for a host at @example.com@. Any value allows tests to run.
+
+For production, you'll need to change the @config.action_mailer.default_url_options@ host option from @example.com@ to your own domain.
+
+h3. Use a Gmail account
+
+Use Gmail for experimenting, if you want to keep things simple.
+
+You'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb*:
+
+<pre>
+config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "example.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
+</pre>
+
+You can replace @ENV["GMAIL_USERNAME"]@ and @ENV["GMAIL_PASSWORD"]@ with your Gmail username and password. However, committing the file to a public GitHub repository will expose your secret password.
+
+h3. Use a Mandrill account
+
+Use an SMTP relay service such as Mandrill if you want to increase deliverability for email messages from your app. 
+
+You'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb*:
+
+<pre>
+config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 25,
+  :user_name => ENV["MANDRILL_USERNAME"],
+  :password  => ENV["MANDRILL_API_KEY"]
+}
+</pre>
+
+Note that the password will be your Mandrill API key. 
+
+You can replace @ENV["MANDRILL_USERNAME"]@ and @ENV["MANDRILL_API_KEY"]@ with your Mandrill username and API key. However, committing the file to a public GitHub repository will expose your secret API key.
+
+h3. Keep Email Account Passwords Secret
+
+If you're familiar with setting "Unix environment variables":http://en.wikipedia.org/wiki/Environment_variable, it's advisable to leave @config.action_mailer.smtp_settings@ unchanged and set your environment variables in the file that is read when starting an interactive shell (the *~/.bashrc* file for the bash shell). This will keep the password out of your repository.
+
+Are you using a bash shell? Use @echo $SHELL@ to find out. For a bash shell, edit the *~/.bashrc* file and add (for Gmail):
+
+<pre>
+export GMAIL_USERNAME="myname@gmail.com"
+export GMAIL_PASSWORD="secret"
+</pre>
+
+or for Mandrill:
+
+<pre>
+export MANDRILL_USERNAME="myname"
+export MANDRILL_API_KEY="secret"
+</pre>
+
+If you are using MailChimp for managing a mailing list, add your MailChimp API key:
+
+<pre>
+export MAILCHIMP_API_KEY="secret"
+</pre>
+
+After you deploy to Heroku, you will need to set the username and password as Heroku environment variables.
+
+For Gmail:
+
+<pre>
+$ heroku config:add GMAIL_USERNAME=myname@gmail.com GMAIL_PASSWORD=secret
+</pre>
+
+or for Mandrill:
+
+<pre>
+$ heroku config:add MANDRILL_USERNAME=myname MANDRILL_API_KEY=secret
+</pre>
+
+and MailChimp:
+
+<pre>
+$ heroku config:add MAILCHIMP_API_KEY=secret
+</pre>
+
+Open a new shell or restart your terminal application to continue.
+
+h3. Configure Devise for Email
+
+Complete your email configuration by modifying
 
 *config/initializers/devise.rb*
 
-and setting the return email address for emails sent from the application.
+and setting the @config.mailer_sender@ option for the return email address for messages that Devise sends from the application.
 
-You may need to set values for your mailhost in
+h2. Set Up the Database
 
-*config/environments/development.rb*
-*config/environments/production.rb*
+h3. Create a Default User
 
-h2. Create a Default User
-
-h3. Set Up a Database Seed File
-
-You'll want to set up a default user so you can easily log in to test the app. You can modify the file *db/seeds.rb* for your own name, email and password:
+You'll want to set up a default user so you can test the app. The file *db/seeds.rb* already contains:
 
 <pre>
 puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
+user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
 puts 'New user created: ' << user.name
+user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
+puts 'New user created: ' << user2.name
+user.add_role :admin
 </pre>
 
-Use the defaults or change the values for name, email, and password as you wish.
+You can change the values for name, email, and password as you wish.
 
 h3. Seed the Database
 
-Add the default user to the database by running the command:
+Set up the database and add the default users by running:
 
-@$ rake db:migrate@
-@$ rake db:seed@
+<pre>
+$ bundle exec rake db:migrate
+$ bundle exec rake db:seed
+</pre>
 
-h3. Test the App
+You can reset the database anytime (though you'll lose all data):
+
+<pre>
+$ bundle exec rake db:reset
+</pre>
+
+h2. Test Suite
+
+Run the Cucumber integration test suite to see if everything works.
+
+Be sure you’ve set up the database for testing:
+
+<pre>
+$ bundle exec rake db:test:prepare
+</pre>
+
+Then we can run our integration test suite with the following command:
+
+<pre>
+$ bundle exec cucumber
+</pre>
+
+h2. Test the App
 
 You can check that your app runs properly by entering the command
 
 @$ rails server@
 
-To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000. You should see the default user listed on the home page. When you click on the user's name, you should be required to log in before seeing the user's detail page.
+To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000.
 
-To sign in as the default user, (unless you've changed it) use
+Sign in as the first user (the administrator) using: 
 
 * email: user@example.com
 * password: please
 
-You should delete or change the pre-configured logins before you deploy your application.
+You'll see a navigation link for Admin. Clicking the link will display a page with a list of users at
+"http://localhost:3000/users":http://localhost:3000/users.
+
+To sign in as the second user, use
+
+* email: user2@example.com
+* password: please
+
+The second user will not see the Admin navigation link and will not be able to access the page at
+"http://localhost:3000/users":http://localhost:3000/users.
+
+If you want to see what the admininstrative dashboard looks like with many users, you can add a line to the *db/seeds.rb* file to create a hundred bogus users:
+
+<pre>
+100.times {|i| User.create! :name => "User #{i+3}", :email => "user#{i+3}@example.com", :password => 'please', :password_confirmation => 'please', :confirmed_at => (Time.now + i.day).utc, :created_at => (Time.now + i.day).utc  }
+</pre>
+
+You'll have to modify the file *app/models/user.rb* to allow mass assignment of the @created_at@ field:
+
+<pre>
+attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :created_at
+</pre>
+
+Then run @$ bundle exec rake db:reset@ to recreate the database and visit the site again.
 
 h2. Deploy to Heroku
 
 For your convenience, here are instructions for "deploying your app to Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
 
-h2. Testing
-
-The application contains RSpec unit tests and Cucumber scenarios and steps. The tests are minimal and can be improved.
-
-Please send the author a message, create an issue, or submit a pull request if you can contribute improved RSpec or Cucumber files.
-
-After installing the application, run @rake -T@ to check that rake tasks for RSpec and Cucumber are available.
-
-Run @rake spec@ to run all RSpec tests.
-
-Run @rake cucumber@ (or more simply, @cucumber@) to run all Cucumber scenarios and steps.
-
-h2. Documentation and Support
-
-This and the "tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html are the only documentation.
-
-For a Devise introduction, Ryan Bates offers a "Railscast on Devise":http://railscasts.com/episodes/209-introducing-devise. You can find documentation for "Devise":http://github.com/plataformatec/devise at "http://github.com/plataformatec/devise":http://github.com/plataformatec/devise. There is an active "Devise mailing list":http://groups.google.com/group/plataformatec-devise and you can submit "Devise issues":http://github.com/plataformatec/devise/issues at GitHub.
-
-h4. Issues
+h2. Where to Get Help
 
 Please create a "GitHub issue":http://github.com/RailsApps/rails-prelaunch-signup/issues if you identify any problems or have suggestions for improvements.
-
-h4. Where to Get Help
 
 Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
 
@@ -333,6 +489,12 @@ Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) implemented the
 Is the app useful to you? Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps
 and tweet some praise. I'd love to know you were helped out by what I've put together.
 
-h2. License
+h2. MIT License
 
-Contact the author for license terms.
+Copyright © 2012 Daniel Kehoe
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
