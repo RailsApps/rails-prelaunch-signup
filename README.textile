@@ -398,15 +398,17 @@ h3. Seed the Database
 Set up the database and add the default users by running:
 
 <pre>
-$ bundle exec rake db:migrate
-$ bundle exec rake db:seed
+$ rake db:migrate
+$ rake db:seed
 </pre>
 
 You can reset the database anytime (though you'll lose all data):
 
 <pre>
-$ bundle exec rake db:reset
+$ rake db:reset
 </pre>
+
+If you're not using rvm, the "Ruby Version Manager":https://rvm.io/, you should preface each rake command with @bundle exec@. You don't need to use @bundle exec@ if you are using rvm version 1.11.0 or newer.
 
 h2. Test Suite
 
@@ -415,13 +417,13 @@ Run the Cucumber integration test suite to see if everything works.
 Be sure you’ve set up the database for testing:
 
 <pre>
-$ bundle exec rake db:test:prepare
+$ rake db:test:prepare
 </pre>
 
 Then we can run our integration test suite with the following command:
 
 <pre>
-$ bundle exec cucumber
+$ cucumber
 </pre>
 
 h2. Test the App
@@ -460,7 +462,7 @@ You'll have to modify the file *app/models/user.rb* to allow mass assignment of 
 attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :created_at
 </pre>
 
-Then run @$ bundle exec rake db:reset@ to recreate the database and visit the site again.
+Then run @$ rake db:reset@ to recreate the database and visit the site again.
 
 h2. Deploy to Heroku
 
