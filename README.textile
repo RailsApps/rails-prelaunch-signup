@@ -182,7 +182,7 @@ h3. Transactional Email
 
 For simple testing of email, it's easy to use Gmail to send email messages from the application. For deployment, when the application must send dozens or thousands of acknowledgments or invitations, you will need a hosted SMTP relay service (also known as an ESP or "email service provider"). This tutorial provides instructions for "Mandrill by MailChimp":http://mandrill.com/. The Mandrill transactional email service integrates well with the MailChimp email list manager service. Plus, you can send up to 12,000 emails/month from the service for free.
 
-Sign up for a MailChimp account to get started. After you've created your MailChimp account, see the instructions to "Use Mandrill with MailChimp":http://help.mandrill.com/customer/portal/articles/464750-use-mandrill-with-mailchimp to add the Mandrill service. Make sure you "Verify a Sending Domain":http://help.mandrill.com/customer/portal/articles/464811-verify-a-sending-domain and get the "Access Information":http://help.mandrill.com/customer/portal/articles/464828-access-information (your SMTP username and password, which is an API key).
+Sign up for a MailChimp account to get started. After you've created your MailChimp account, see the instructions to "Use Mandrill with MailChimp":http://help.mandrill.com/customer/portal/articles/464750-use-mandrill-with-mailchimp. Then get the "Access Information":http://help.mandrill.com/customer/portal/articles/464828-access-information (your SMTP username and password, which is an API key).
 
 h3. Mailing List
 
