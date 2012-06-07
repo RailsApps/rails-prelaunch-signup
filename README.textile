@@ -393,6 +393,10 @@ user.add_role :admin
 
 You can change the values for name, email, and password as you wish.
 
+If you include your private password in the file, be sure to add the filename to your *.gitignore* file so that your password doesn't become available in your public GitHub repository.
+
+Note that it's not necessary to personalize the *db/seeds.rb* file before you deploy your app. You can deploy the app with an example user and then use the application's "Edit Account" feature to change name, email address, and password after you log in.
+
 h3. Seed the Database
 
 Set up the database and add the default users by running:
