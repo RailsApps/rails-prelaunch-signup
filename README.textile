@@ -121,7 +121,7 @@ h3. Articles and Discussion
 
 Here are some articles that describe the purpose and options for a startup prelaunch page:
 
-* "Building An Effective ‘Coming Soon’ Page for Your Product":http://www.smashingmagazine.com/2011/05/24/building-an-effective-coming-soon-page-for-your-product/ from Smashing Magazine
+* "Building An Effective 'Coming Soon' Page for Your Product":http://www.smashingmagazine.com/2011/05/24/building-an-effective-coming-soon-page-for-your-product/ from Smashing Magazine
 * "Elements Of A Viral Launch Page":http://spking.com/2011/08/30/roll-your-own-pre-launch-page/ from Smashing Magazine
 * "Which Are the Best Startup Prelaunch Pages?":http://www.quora.com/Which-are-the-best-startup-prelaunch-pages from Quora
 
