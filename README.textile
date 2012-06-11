@@ -2,7 +2,9 @@ h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails App for a Startup 
 
 Rails 3.2 example application for a “beta launching soon” startup prelaunch signup site.
 
-With a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
+With a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built. 
+
+Plus you can generate the complete app in about a minute using an application template.
 
 !http://railsapps.github.com/images/xplaygrounds-screenshot.png(Rails Application for a Startup Prelaunch Signup Site)!
 
@@ -85,7 +87,7 @@ If you add features or improve the implementation, please consider contributing 
 
 h2. Alternatives
 
-This is an application for Rails developers who wish to deploy their own app. It is a good stepping stone to building a more complex application for your startup. 
+This is an application for Rails developers who wish to deploy their own app. It is a good stepping stone to building a more complex application for your startup. You'll own your own code and can customize to your needs.
 
 If you do not want to build an application, or you are not a Rails developer, you may wish to consider alternatives.
 
@@ -152,7 +154,7 @@ h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-sig
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
 
-If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
+If you simply wish to modify the application for your own project, you can generate the application and set it up as described below, without following the tutorial.
 
 h2. Dependencies
 
@@ -180,13 +182,13 @@ Instructions are provided for deployment to Heroku.
 
 h3. Transactional Email
 
-For simple testing of email, it's easy to use Gmail to send email messages from the application. For deployment, when the application must send dozens or thousands of acknowledgments or invitations, you will need a hosted SMTP relay service (also known as an ESP or "email service provider"). This tutorial provides instructions for "Mandrill by MailChimp":http://mandrill.com/. The Mandrill transactional email service integrates well with the MailChimp email list manager service. Plus, you can send up to 12,000 emails/month from the service for free.
+For simple testing of email, it's easy to use Gmail to send email messages from the application. For deployment, when the application must send dozens or thousands of acknowledgments or invitations, you will need a hosted SMTP relay service (also known as an ESP or "email service provider"). We provide instructions for "Mandrill by MailChimp":http://mandrill.com/. The Mandrill transactional email service integrates well with the MailChimp email list manager service. Plus, you can send up to 12,000 emails/month from the service for free.
 
 Sign up for a MailChimp account to get started. After you've created your MailChimp account, see the instructions to "Use Mandrill with MailChimp":http://help.mandrill.com/customer/portal/articles/464750-use-mandrill-with-mailchimp. Then get the "Access Information":http://help.mandrill.com/customer/portal/articles/464828-access-information (your SMTP username and password, which is an API key).
 
 h3. Mailing List
 
-In addition to sending transactional email messages, you likely will want to send newsletters or announcements to your entire mailing list. This tutorial shows how to add visitors who request an invitation to a "MailChimp":http://mailchimp.com/ list. MailChimp allows you to send up to 12,000 emails/month to list of 2000 or fewer subscribers for free. After you sign up for a MailChimp account, get your API key. Look under "Account" for "API Keys and Authorized Apps." Note that the Mandrill API key (which you get on the "mandrill.com":http://mandrill.com/ site) is different from the MailChimp API key (which you get on the "mailchimp.com":http://mailchimp.com/ site).
+In addition to sending transactional email messages, you likely will want to send newsletters or announcements to your entire mailing list. The tutorial shows how to add visitors who request an invitation to a "MailChimp":http://mailchimp.com/ list. MailChimp allows you to send up to 12,000 emails/month to list of 2000 or fewer subscribers for free. After you sign up for a MailChimp account, get your API key. Look under "Account" for "API Keys and Authorized Apps." Note that the Mandrill API key (which you get on the "mandrill.com":http://mandrill.com/ site) is different from the MailChimp API key (which you get on the "mailchimp.com":http://mailchimp.com/ site).
 
 h2. Getting the Application
 
@@ -198,7 +200,7 @@ _Fork:_ If you'd like to add features (or bug fixes) to improve the app for othe
 
 _Clone or Download:_ If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo or download a zip file. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below).
 
-_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app. _Note: Unfortunately, the application template isn't available yet. In the meantime, follow the steps in the Tutorial to create your own version of the project._
+_Generate:_ If you want to use the project as a starter app for your customized application, use the application template to generate a new version of the example app. You'll be able to give it your project name when you generate the app.
 
 h3. Clone the Repository
 
@@ -211,6 +213,38 @@ $ git clone git://github.com/RailsApps/rails-prelaunch-signup.git
 The source code is managed with Git (a version control system). You'll need Git on your machine (install it from "http://git-scm.com/":http://git-scm.com/).
 
 As an alternative, you can download a zip file.
+
+h3. Using the Ready-Made Application Template
+
+You can use an application template to generate a new version of the example app. You’ll find an application template for this app in the "Rails Application Templates":https://github.com/RailsApps/rails3-application-templates repository.
+
+You'll be able to give it your own project name when you generate the app. Generating the application allows you to choose from several options.
+
+Use the command:
+
+<pre>
+$ rails new rails-prelaunch-signup -m https://raw.github.com/RailsApps/rails3-application-templates/master/rails-prelaunch-signup-template.rb -T
+</pre>
+
+Use the @-T@ flag to skip Test::Unit files.
+
+The @$@ character indicates a shell prompt; don't include it when you run the command.
+
+This creates a new Rails app named @rails-prelaunch-signup@ on your computer. You can use a different name if you wish.
+
+The application generator template will ask you for your preferences.
+
+To produce an application exactly like the example, make the following selections:
+
+* How will you send email? *#4*
+## SMTP account
+## Gmail account
+## SendGrid account
+## Mandrill by MailChimp account
+* Use MailChimp to send news and welcome messages? *yes*
+* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
+
+You can choose other selections if you don't care about matching the example application exactly.
 
 h4. Replace the READMEs
 
