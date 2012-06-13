@@ -501,10 +501,11 @@ attr_accessible :name, :email, :password, :password_confirmation, :remember_me, 
 </pre>
 
 Then run @$ rake db:reset@ to recreate the database and visit the site again.
+Remember to remove those open doors to your database before your site goes live.
 
 h2. Deploy to Heroku
 
-For your convenience, here are instructions for "deploying your app to Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
+For your convenience, here are instructions for "deploying your app to Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting. Small sites can begin with no cost whatsoever, to allow for development of the site.
 
 h2. Where to Get Help
 
