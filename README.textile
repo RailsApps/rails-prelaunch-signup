@@ -2,13 +2,28 @@ h1. !http://railsapps.github.com/images/rails-36x36.jpg(Rails App for a Startup 
 
 Rails 3.2 example application for a “beta launching soon” startup prelaunch signup site.
 
-With a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built. 
+* "Rails Prelaunch Signup App":http://railsapps.github.com/rails-prelaunch-signup/ project page
+
+There's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built. 
 
 Plus you can generate the complete app in about a minute using an application template.
 
 !http://railsapps.github.com/images/xplaygrounds-screenshot.png(Rails Application for a Startup Prelaunch Signup Site)!
 
-Read an "interview with Michael Gajda":http://blog.railsapps.org/post/22543541226/powered-up-by-the-railsapps-project-xplaygrounds-com of "XPlaygrounds.com":http://xplaygrounds.com/ about how he used the "rails-prelaunch-signup":http://github.com/RailsApps/rails-prelaunch-signup/ example to launch his startup site. If you launch a site using this example, add your link to the list of "Rails Applications Built from the Examples":http://railsapps.github.com/rails-applications-from-examples.html. 
+h4. Sites Using the App
+
+If you deploy a site using this example, please message "Daniel Kehoe":http://twitter.com/rails_apps so we can let others know.
+
+|_. Site                  |_. Author |
+| "XPlaygrounds.com":http://xplaygrounds.com/ | "Michael Gajda":http://twitter.com/MichaelGajda |
+| "Remindeal.com":http://remindeal.com/ | "Nelson Keating":http://twitter.com/nelson_keating |
+
+Read an "interview with Michael Gajda":http://blog.railsapps.org/post/22543541226/powered-up-by-the-railsapps-project-xplaygrounds-com  about how he used the project to launch his startup site.
+
+h4. Notable Forks
+
+|_. Alternative version                  |_. |_. Author |
+| "rails-prelaunch-signup-1click":https://github.com/chadokruse/rails-prelaunch-signup-1click | single-click email submit (no modal) | "Chad Kruse":http://twitter.com/chadkruser |
 
 h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
 
