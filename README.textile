@@ -112,6 +112,7 @@ h3. Similar Projects
 You can find other projects on GitHub that offer similar functionality.
 
 |_. Author |_. Project |_. Description |
+| codelitt | "launchpage-rails":https://github.com/codelitt/launchpage-rails | Signup for two different types of users |
 | johngrimes | "t-minus":https://github.com/johngrimes/t-minus | Instant prelaunch page for your Rails 3 app |
 | renderedtext | "coming-soon":https://github.com/renderedtext/coming-soon | Sinatra app to show a pre-launch page and collect emails |
 | hashrocket | "coming-soon":https://github.com/hashrocket/coming-soon | Sinatra app to register email addresses |
