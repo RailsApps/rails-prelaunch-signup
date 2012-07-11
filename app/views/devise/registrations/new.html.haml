@@ -6,6 +6,7 @@
     .modal-body
       = f.error_notification
       = f.input :email, :placeholder => 'user@example.com'
+      = f.input :opt_in, :label => false, :inline_label => 'Please send announcements.'
     .modal-footer
       = f.submit "Request Invitation", :class => "btn.btn-success", :id => 'invitation_button'
       %a.btn{"data-dismiss" => "modal", :href => "#"} Close
