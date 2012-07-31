@@ -220,7 +220,7 @@ DEPENDENCIES
   jquery-datatables-rails (>= 1.10.0)
   jquery-rails
   launchy (>= 2.1.0)
-  rails (~> 3.2.5)
+  rails (~> 3.2.7)
   rolify (>= 3.1.0)
   rspec-rails (>= 2.10.1)
   sass-rails (~> 3.2.3)
