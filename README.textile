@@ -550,4 +550,4 @@ h2. MIT License
 
 Copyright © 2012 Daniel Kehoe
 
-!https://cruel-carlota.pagodabox.com/9a7ed11e8570e461c585a7afd3722d71(githalytics.com alpha)!
+!https://cruel-carlota.pagodabox.com/6ffdc588dd4075aa7827bd7806ed40f7(githalytics.com alpha)!
