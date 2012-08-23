@@ -22,7 +22,6 @@ gem "database_cleaner", ">= 0.8.0", :group => :test
 gem "launchy", ">= 2.1.0", :group => :test
 gem "hominid"
 gem "devise", ">= 2.1.2"
-gem "devise_invitable", ">= 1.0.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.1.0"
 gem "google_visualr", ">= 2.1.2"
