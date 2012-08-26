@@ -249,17 +249,35 @@ This creates a new Rails app named @rails-prelaunch-signup@ on your computer. Yo
 
 The application generator template will ask you for your preferences.
 
-To produce an application exactly like the example, make the following selections:
-
-* How will you send email? *#4*
-## SMTP account
-## Gmail account
-## SendGrid account
-## Mandrill by MailChimp account
-* Use MailChimp to send news and welcome messages? *yes*
-* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
-
-You can choose other selections if you don't care about matching the example application exactly.
+<pre>
+ question  Git branch for the prelaunch app?
+       1)  wip (work-in-progress)
+       2)  master
+       3)  prelaunch
+       4)  staging
+ question  Git branch for the main app?
+       1)  None
+       2)  wip (work-in-progress)
+       3)  edge
+ question  Web server for development?
+       1)  WEBrick (default)
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Web server for production?
+       1)  Same as development
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Template engine?
+       1)  ERB
+       2)  Haml
+       3)  Slim
+   extras  Set a robots.txt file to ban spiders? (y/n) n
+   extras  Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? (y/n) n
+   extras  Create a project-specific rvm gemset and .rvmrc? (y/n) y
+   extras  Create a GitHub repository? (y/n) n
+</pre>
 
 h4. Replace the READMEs
 
@@ -433,9 +451,11 @@ You'll want to set up a default user so you can test the app. The file *db/seeds
 
 <pre>
 puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
+user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
+user.confirm!
 puts 'New user created: ' << user.name
-user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
+user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
+user2.confirm!
 puts 'New user created: ' << user2.name
 user.add_role :admin
 </pre>
