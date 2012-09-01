@@ -13,9 +13,10 @@ class User < ActiveRecord::Base
 
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one
+  validates_confirmation_of :password
   def password_required?
     if !persisted? 
-      false
+      !(password != "")
     else
       !password.nil? || !password_confirmation.nil?
     end
