@@ -1,0 +1,44 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'http://www.google.com/jsapi' %>
+<% end %>
+<h2>Users</h2>
+<div class="span9">
+  <div id="chart" style="width: 700px; height: 240px">
+    <%= render_chart @chart, 'chart' %>
+  </div>
+  <br>
+</div>
+<div class="span9">
+  <p>
+    Send Bulk Invitations:
+    <%= link_to "10 &#183;".html_safe, bulk_invite_path(:quantity => '10') %>
+    <%= link_to "50 &#183;".html_safe, bulk_invite_path(:quantity => '50') %>
+    <%= link_to "100 &#183;".html_safe, bulk_invite_path(:quantity => '100') %>
+    <%= link_to "500 &#183;".html_safe, bulk_invite_path(:quantity => '500') %>
+    <%= link_to "1000", bulk_invite_path(:quantity => '1000') %>
+  </p>
+  <table class="datatable table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Requested</th>
+        <th>Invitation</th>
+        <th>Joined</th>
+        <th>Visits</th>
+        <th>Most Recent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.email, user %></td>
+          <td><%= user.created_at.to_date %></td>
+          <td><%= (user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user)) : (link_to "resend", invite_user_path(user))) unless user.confirmed_at %></td>
+          <td><%= user.confirmed_at.to_date if user.confirmed_at %></td>
+          <td><%= user.sign_in_count if user.sign_in_count %></td>
+          <td><%= user.last_sign_in_at.to_date if user.last_sign_in_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

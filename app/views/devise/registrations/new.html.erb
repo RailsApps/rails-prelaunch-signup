@@ -1,0 +1,22 @@
+<div id="request-invite" class="modal" style="display: <%= @user.errors.any? ? 'block' : 'none';%>">
+  <%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) , :html => {:class => 'form-horizontal' } do |f| %>
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&#215;</a>
+      <h3>Request Invitation</h3>
+    </div>
+    <div class="modal-body">
+      <%= f.error_notification %>
+      <%= f.input :email, :placeholder => 'user@example.com' %>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit "Request Invitation", :class => "btn.btn-success", :id => 'invitation_button' %>
+      <a class="btn" data-dismiss="modal" href="#">Close</a>
+    </div>
+  <% end %>
+</div>
+<div id="romance-copy" style="text-align: center; margin-top: 80px">
+  <h2>Want in?</h2>
+</div>
+<div id="call-to-action" style="text-align: center; margin-top: 80px">
+  <a class="btn btn-primary btn-large" data-toggle="modal" href="#request-invite">Request invite</a>
+</div>

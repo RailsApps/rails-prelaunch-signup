@@ -247,19 +247,59 @@ The @$@ character indicates a shell prompt; don't include it when you run the co
 
 This creates a new Rails app named @rails-prelaunch-signup@ on your computer. You can use a different name if you wish.
 
-The application generator template will ask you for your preferences.
+The application template will ask you for your preferences.
 
-To produce an application exactly like the example, make the following selections:
+<pre>
+ question  Git branch for the prelaunch app?
+       1)  wip (work-in-progress)
+       2)  master
+       3)  prelaunch
+       4)  staging
+ question  Git branch for the main app?
+       1)  None
+       2)  wip (work-in-progress)
+       3)  edge
+ question  Web server for development?
+       1)  WEBrick (default)
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Web server for production?
+       1)  Same as development
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Template engine?
+       1)  ERB
+       2)  Haml
+       3)  Slim
+   extras  Set a robots.txt file to ban spiders? (y/n)
+   extras  Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? (y/n)
+   extras  Create a project-specific rvm gemset and .rvmrc? (y/n)
+   extras  Create a GitHub repository? (y/n)
+</pre>
 
-* How will you send email? *#4*
-## SMTP account
-## Gmail account
-## SendGrid account
-## Mandrill by MailChimp account
-* Use MailChimp to send news and welcome messages? *yes*
-* Add 'therubyracer' JavaScript runtime (for Linux users without node.js)? *no*
+h4. Git Branches
 
-You can choose other selections if you don't care about matching the example application exactly.
+The application template will create Git branches for you. This allows you to maintain two versions of the application: one for immdediate deployment as a prelaunch app; and another version that you can use for ongoing development. I recommend deploying the prelaunch app in the "master" branch. Work on your ultimate application in a "wip" branch.
+
+h4. Web Servers
+
+Use the default WEBrick server for convenience. If you plan to deploy to Heroku, select "thin" as your production webserver.
+
+h4. Template Engine
+
+Choose "ERB" if you wish to duplicate the tutorial exactly.
+
+h4. Other Choices
+
+Don't set a robots.txt file to ban spiders if you want your new site to appear in Google search results.
+
+The 'therubyracer' JavaScript runtime is for Linux users without node.js (see "Installing Rails":http://railsapps.github.com/installing-rails.html).
+
+It is a good idea to use "rvm":https://rvm.io/, the Ruby Version Manager (see "Installing Rails":http://railsapps.github.com/installing-rails.html).
+
+If you choose to create a GitHub repository, the application template will prompt you for a username and password.
 
 h4. Replace the READMEs
 
@@ -433,9 +473,11 @@ You'll want to set up a default user so you can test the app. The file *db/seeds
 
 <pre>
 puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
+user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
+user.confirm!
 puts 'New user created: ' << user.name
-user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
+user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
+user2.confirm!
 puts 'New user created: ' << user2.name
 user.add_role :admin
 </pre>
