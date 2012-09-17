@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     data_table.new_column('date')
     data_table.new_column('number')
     users_by_day.each do |day|
-      data_table.add_row([ Date.parse(day[0]), day[1]])
+      data_table.add_row([ Date.parse(day[0].to_s), day[1]])
     end
     @chart = GoogleVisualr::Interactive::AnnotatedTimeLine.new(data_table)
   end
