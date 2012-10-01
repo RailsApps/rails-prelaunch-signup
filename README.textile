@@ -548,13 +548,7 @@ The second user will not see the Admin navigation link and will not be able to a
 If you want to see what the admininstrative dashboard looks like with many users, you can add a line to the *db/seeds.rb* file to create a hundred bogus users:
 
 <pre>
-100.times {|i| User.create! :name => "User #{i+3}", :email => "user#{i+3}@example.com", :password => 'please', :password_confirmation => 'please', :confirmed_at => (Time.now + i.day).utc, :created_at => (Time.now + i.day).utc  }
-</pre>
-
-You'll have to modify the file *app/models/user.rb* to allow mass assignment of the @created_at@ field:
-
-<pre>
-attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :created_at
+100.times {|i| User.create! :name => "User #{i+3}", :email => "user#{i+3}@example.com", :password => 'please', :password_confirmation => 'please'}
 </pre>
 
 Then run @$ rake db:reset@ to recreate the database and visit the site again.
