@@ -463,7 +463,7 @@ rake secret
 Edit your *config/initializers/secret_token.rb* file to add the secret token:
 
 <pre>
-Rails3BootstrapDeviseCancan::Application.config.secret_token = '...some really long, random string...'
+RailsPrelaunchSignup::Application.config.secret_token = '...some really long, random string...'
 </pre>
 
 h2. Test the App
