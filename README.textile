@@ -4,7 +4,7 @@ Rails 3.2 example application for a “beta launching soon” startup prelaunch 
 
 * "Rails Prelaunch Signup App":http://railsapps.github.com/rails-prelaunch-signup/ project page
 
-There's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built. 
+There's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
 
 Plus you can generate the complete app in about a minute using an application template.
 
@@ -150,14 +150,14 @@ This is one in a series of Rails example apps and tutorials from the "RailsApps 
 
 This application is based on two of the RailsApps example apps:
 
-* "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber 
+* "rails3-devise-rspec-cucumber":https://github.com/RailsApps/rails3-devise-rspec-cucumber
 * "rails3-bootstrap-devise-cancan":https://github.com/RailsApps/rails3-bootstrap-devise-cancan
 
-The first example shows how to set up Devise for user authentication. It also shows how to set up the app to use RSpec and Cucumber for testing. 
+The first example shows how to set up Devise for user authentication. It also shows how to set up the app to use RSpec and Cucumber for testing.
 
-The second example shows how to set up Devise and add CanCan to manage access to administrative pages. It also shows how to set up Twitter Bootstrap as a front-end framework for CSS styling. 
+The second example shows how to set up Devise and add CanCan to manage access to administrative pages. It also shows how to set up Twitter Bootstrap as a front-end framework for CSS styling.
 
-You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples. 
+You can use this example without studying these example applications; if you find you are lost, it may be helpful to look at the two simpler examples.
 
 If you want to use the MongoDB datastore instead of ActiveRecord and a SQL database, look at "rails3-mongoid-devise":https://github.com/RailsApps/rails3-mongoid-devise example.
 
@@ -238,7 +238,7 @@ You'll be able to give it your own project name when you generate the app. Gener
 Use the command:
 
 <pre>
-$ rails new rails-prelaunch-signup -m https://raw.github.com/RailsApps/rails3-application-templates/master/rails-prelaunch-signup-template.rb -T
+$ rails new rails-prelaunch-signup -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
 </pre>
 
 Use the @-T@ flag to skip Test::Unit files.
@@ -366,7 +366,7 @@ config.action_mailer.default_url_options = { :host => 'example.com' }
 
 This will set the example application to deliver email in production. Email messages are visible in the log file so there is no need to send email in development. The configuration above will raise delivery errors in development but not in production.
 
-In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly during development. 
+In development, @config.action_mailer.default_url_options@ is set for a host at @localhost:3000@ which will enable links in Devise confirmation email messages to work properly during development.
 
 For testing, @config.action_mailer.default_url_options@ is set for a host at @example.com@. Any value allows tests to run.
 
@@ -394,7 +394,7 @@ You can replace @ENV["GMAIL_USERNAME"]@ and @ENV["GMAIL_PASSWORD"]@ with your Gm
 
 h3. Use a Mandrill account
 
-Use an SMTP relay service such as Mandrill if you want to increase deliverability for email messages from your app. 
+Use an SMTP relay service such as Mandrill if you want to increase deliverability for email messages from your app.
 
 You'll need to modify the files *config/environments/development.rb* and *config/environments/production.rb*:
 
@@ -407,7 +407,7 @@ config.action_mailer.smtp_settings = {
 }
 </pre>
 
-Note that the password will be your Mandrill API key. 
+Note that the password will be your Mandrill API key.
 
 You can replace @ENV["MANDRILL_USERNAME"]@ and @ENV["MANDRILL_API_KEY"]@ with your Mandrill username and API key. However, committing the file to a public GitHub repository will expose your secret API key.
 
@@ -529,7 +529,7 @@ You can check that your app runs properly by entering the command
 
 To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000.
 
-Sign in as the first user (the administrator) using: 
+Sign in as the first user (the administrator) using:
 
 * email: user@example.com
 * password: please
