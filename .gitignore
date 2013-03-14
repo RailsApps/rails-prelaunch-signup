@@ -6,7 +6,7 @@
 # The original version of this file is found here:
 # https://github.com/RailsApps/rails-composer/blob/master/files/gitignore.txt
 #
-# Corrections? Improvements? Create a GitHub issue: 
+# Corrections? Improvements? Create a GitHub issue:
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
@@ -72,3 +72,6 @@ pickle-email-*.html
 
 # vim artifacts
 **.swp
+
+# Ignore application configuration
+/config/application.yml
