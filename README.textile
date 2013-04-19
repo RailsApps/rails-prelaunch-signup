@@ -4,7 +4,7 @@ Rails 3.2 example application for a “beta launching soon” startup prelaunch 
 
 * "Rails Prelaunch Signup App":http://railsapps.github.com/rails-prelaunch-signup/ project page
 
-Best of all, there's a "detailed tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html to show how it is built.
+Best of all, there's a "detailed tutorial":https://tutorials.railsapps.org/rails-prelaunch-signup to show how it is built.
 
 You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.com/rails-composer/ tool.
 
@@ -54,7 +54,6 @@ h4. For the site owner:
 
 * administrative dashboard page
 * list of all visitors who have requested invitations
-* time-series chart of invitation requests over time
 * site owner can send individual invitations
 * "bulk invitation" feature to send 50, 100, or more invitations
 * see status for any user: "uninvited", "confirmed", "last visit"
@@ -70,12 +69,9 @@ h4. Implementation details:
 h4. Tutorial shows how to:
 
 * write user stories
-* manage a software development process using behavior-driven development (BDD)
-* prepare a specification using Cucumber scenarios
-* create acceptance tests using Cucumber step definitions (with Capybara)
 * use Devise for user management and authentication
 * use CanCan for role-based authorization
-* keep account passwords secret using Unix environment variables
+* keep account passwords secret using environment variables
 * use git and GitHub for source control
 * deploy using Heroku
 
@@ -84,33 +80,31 @@ h4. Unimplemented
 * queuing (asynchronous processing) for transactional email and MailChimp list capture
 * caching
 * A/B testing of offers
-* advanced analytics
-* "about" and "contact" pages
 * Google analytics
+* "about" and "contact" pages
 
 If you add features or improve the implementation, please consider contributing by submitting an issue or pull request from your fork.
 
 h2. Alternatives
 
-This is an application for Rails developers who wish to deploy their own app. It is a good stepping stone to building a more complex application for your startup. You'll own your own code and can customize to your needs.
+This is an application for Rails developers who wish to deploy their own application. It is a good stepping stone to building a more complex application for your startup. You'll own your own code and can customize to your needs.
+
+Unlike a service such as "LaunchRock":http://launchrock.co/, "KickoffLabs":http://kickofflabs.com/ and "Unbounce":http://unbounce.com/, you'll have your own application you can customize as you wish. Just as important, when your visitors sign up, they are creating real user accounts in a user management system you can use after you launch.
 
 If you do not want to build an application, or you are not a Rails developer, you may wish to consider alternatives.
 
 h3. Hosted Services
 
-"LaunchRock":http://launchrock.com/ - "set up a social launching-soon page in minutes"
-
-"KickoffLabs":http://www.kickofflabs.com/ - "viral landing pages you'll love in 60 seconds"
-
-"Prefinery":http://www.prefinery.com/ - "complete beta management platform that encourages social sharing"
-
-"Unbounce":http://unbounce.com/ - "create, publish & A/B test landing pages"
+* "LaunchRock":http://launchrock.com/ - "set up a social launching-soon page in minutes"
+* "KickoffLabs":http://www.kickofflabs.com/ - "viral landing pages you'll love in 60 seconds"
+* "Prefinery":http://www.prefinery.com/ - "complete beta management platform that encourages social sharing"
+* "Unbounce":http://unbounce.com/ - "create, publish & A/B test landing pages"
 
 h3. WordPress Themes
 
 WordPress themes are a popular way to stage a startup prelaunch page.
 
-"Launch Effect":http://launcheffectapp.com/ - "a WordPress theme for viral launches"
+* "Launch Effect":http://launcheffectapp.com/ - "a WordPress theme for viral launches"
 
 h3. Similar Projects
 
@@ -156,9 +150,9 @@ h2. Tutorial
 
 A complete tutorial is available:
 
-h4. "View the Tutorial":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html
+h4. "View the Tutorial":https://tutorials.railsapps.org/rails-prelaunch-signup
 
-The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. See a list of recommended resources for "Rails":http://railsapps.github.com/rails.html.
+The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. If you’re new to Rails, see recommendations for a "Rails tutorial":https://tutorials.railsapps.org/rails-tutorial and a list of top resources for "Ruby and Rails":http://railsapps.github.com/ruby-and-rails.html. The article "What is Ruby? And Rails?":http://railsapps.github.com/what-is-ruby-rails.html is a good place to get a basic introduction to Rails.
 
 If you simply wish to modify the application for your own project, you can generate the application and set it up as described below, without following the tutorial.
 
@@ -375,19 +369,31 @@ Modify the file *config/application.yml*:
 # makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
 # Add application configuration variables here, as shown below.
 #
-GMAIL_USERNAME: Your_Username
-GMAIL_PASSWORD: Your_Password
+MANDRILL_USERNAME: Your_Username
+MANDRILL_API_KEY: Your_Mandrill_API_Key
+MAILCHIMP_API_KEY: Your_MailChimp_API_Key
+MAILCHIMP_LIST_ID: My_List_ID
 ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
-ROLES: [admin, user, VIP]
+ROLES: [admin, user]
+EMAIL_ADDRESS: user@example.com
+DOMAIN: example.com
 </pre>
 
-Set the user name and password needed for the application to send email.
+We use Mandrill to increase deliverability for email messages from the application. Provide a @MANDRILL_USERNAME@ and @MANDRILL_API_KEY@.
+
+When visitors sign up to be notified of our launch, we'll add them to a MailChimp list. Add an environment variable for the MailChimp API key: @MAILCHIMP_API_KEY@. You can find the MailChimp API key under the tab for "Account" on the MailChimp website after you log in. Look for the "Api Keys and Authorized Apps" menu item.
+
+We'll add @MAILCHIMP_LIST_ID@ for the ID of the mailing list we'll set up in MailChimp. To find the list ID, on the MailChimp "Lists" page, look for the dropdown "gear" menu for the mailing list you've created and click "List Settings and Unique ID." At the bottom of the List Settings page, you'll find the unique ID for the mailing list.
 
 If you wish, set your name, email address, and password for an administrator's account. If you prefer, you can use the default to sign in to the application and edit the account after deployment. It is always a good idea to change the administrator's password after the application is deployed.
 
-Specify roles in the configuration file. You will need an "admin" role. The "user" and "VIP" roles are examples and are not used in this application.
+Specify roles in the configuration file. You will need an "admin" role and "user" role. Remove the "VIP" role as we won't use it.
+
+We'll add @EMAIL_ADDRESS@ to provide the default sender email address we use when sending email from the application.
+
+Finally, we'll add @DOMAIN@ which is also used when sending email.
 
 All configuration values in the *config/application.yml* file are available anywhere in the application as environment variables. For example, @ENV["GMAIL_USERNAME"]@ will return the string "Your_Username".
 
@@ -492,48 +498,47 @@ Then run @$ rake db:reset@ to recreate the database and visit the site again.
 
 h2. Deploy to Heroku
 
-For your convenience, here is a "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
+Heroku provides low cost, easily configured Rails application hosting.
 
-Add this configuration parameter to the *config/application.rb* file:
+For your convenience, here is a "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. See the article for details about preparing your application to deploy to Heroku.
 
-<pre>
-# Heroku requires this to be false
-config.assets.initialize_on_precompile=false
-</pre>
+Be sure to set up SSL before you make your application available in production. See the "Heroku documentation on SSL":https://devcenter.heroku.com/articles/ssl or use CloudFlare as described in the "Accounts You May Need":#accounts-you-may-need section.
 
-Then precompile assets, commit to git, and push to Heroku:
+After you've prepared your application as described in the "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html article, precompile assets, commit to git, and push to Heroku:
 
-<pre>
+@@@ console
 $ rake assets:precompile
 $ git add -A
 $ git commit -m "assets compiled for Heroku"
 $ git push heroku master
-</pre>
+@@@
 
 You'll need to set the configuration values from the *config/application.yml* file as Heroku environment variables. See the article "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html for more information.
 
 With the figaro gem, just run:
 
-<pre>
-rake figaro:heroku
-</pre>
+@@@ console
+$ rake figaro:heroku
+@@@
 
-Alternatively, you can set Heroku environment variables directly with @heroku config:add@.
+Alternatively, you can set Heroku environment variables directly.
 
-<pre>
-$ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
-$ heroku config:add 'ROLES=[admin, user, VIP]'
+Here's how to set environment variables directly on Heroku with @heroku config:add@.
+
+@@@ console
+$ heroku config:add MANDRILL_USERNAME='Your_Username' MANDRILL_API_KEY='Your_Mandrill_API_Key'
+$ heroku config:add MAILCHIMP_LIST_ID='Your_List_ID'
 $ heroku config:add ADMIN_NAME='First User' ADMIN_EMAIL='user@example.com' ADMIN_PASSWORD='changeme'
-</pre>
+$ heroku config:add 'ROLES=[admin, user]'
+heroku config:add EMAIL_ADDRESS='me@example.com' DOMAIN='example.com'
+@@@
 
 Complete Heroku deployment with:
 
-<pre>
+@@@ console
 $ heroku run rake db:migrate
 $ heroku run rake db:seed
-</pre>
-
-See the "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html for details.
+@@@
 
 h2. Testing
 
@@ -584,7 +589,7 @@ h2. Useful Links
 | "Rails Tutorial":https://tutorials.railsapps.org/rails-tutorial (recommendations) | "Heroku and Rails":http://railsapps.github.com/rails-heroku-tutorial.html | "Devise with CanCan and Twitter Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan |
 | "Rails":http://railsapps.github.com/rails.html (resources)| "Twitter Bootstrap and Rails":http://railsapps.github.com/twitter-bootstrap-rails.html | "Rails Membership Site with Stripe":https://tutorials.railsapps.org/rails-stripe-membership-saas |
 | "Installing Rails":http://railsapps.github.com/installing-rails.html | "JavaScript and Rails":http://railsapps.github.com/rails-javascript-include-external.html | "Rails Subscription Site with Recurly":https://tutorials.railsapps.org/rails-recurly-subscription-saas |
-| "Updating Rails":http://railsapps.github.com/updating-rails.html | "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html | "Startup Prelaunch Signup Application":http://railsapps.github.com/tutorial-rails-prelaunch-signup.html |
+| "Updating Rails":http://railsapps.github.com/updating-rails.html | "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html | "Startup Prelaunch Signup Application":https://tutorials.railsapps.org/rails-prelaunch-signup |
 | "Rails Composer":http://railsapps.github.com/rails-composer/ | "Git and GitHub with Rails":http://railsapps.github.com/rails-git.html | "Devise with RSpec and Cucumber":http://railsapps.github.com/tutorial-rails-devise-rspec-cucumber.html |
 | "Rails Examples":http://railsapps.github.com/ | "Send Email with Rails":http://railsapps.github.com/rails-send-email.html | "Devise with Mongoid":http://railsapps.github.com/tutorial-rails-mongoid-devise.html |
 | "Rails Starter Apps":http://railsapps.github.com/rails-examples-tutorials.html | "Haml and Rails":http://railsapps.github.com/rails-haml.html | "OmniAuth with Mongoid":http://railsapps.github.com/tutorial-rails-mongoid-omniauth.html |
