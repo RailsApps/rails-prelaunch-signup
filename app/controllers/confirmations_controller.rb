@@ -13,7 +13,7 @@ class ConfirmationsController < Devise::PasswordsController
       respond_with(resource)
     end
   end
-  
+
   # PUT /resource/confirmation
   def update
     with_unconfirmed_confirmable do
@@ -48,7 +48,7 @@ class ConfirmationsController < Devise::PasswordsController
       render 'devise/confirmations/new'
     end
   end
-  
+
   protected
 
   def with_unconfirmed_confirmable
@@ -70,7 +70,7 @@ class ConfirmationsController < Devise::PasswordsController
     set_flash_message :notice, :confirmed
     sign_in_and_redirect(resource_name, @confirmable)
   end
-  
+
   # The path used after resending confirmation instructions.
   def after_resending_confirmation_instructions_path_for(resource_name)
     new_session_path(resource_name)
@@ -80,5 +80,5 @@ class ConfirmationsController < Devise::PasswordsController
   def after_confirmation_path_for(resource_name, resource)
     after_sign_in_path_for(resource)
   end
-  
+
 end

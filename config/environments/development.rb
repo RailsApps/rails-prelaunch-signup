@@ -19,7 +19,7 @@ RailsPrelaunchSignup::Application.configure do
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"  
+  config.action_mailer.default :charset => "utf-8"
 
     config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",
