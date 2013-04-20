@@ -506,39 +506,39 @@ Be sure to set up SSL before you make your application available in production. 
 
 After you've prepared your application as described in the "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html article, precompile assets, commit to git, and push to Heroku:
 
-@@@ console
+<pre>
 $ rake assets:precompile
 $ git add -A
 $ git commit -m "assets compiled for Heroku"
 $ git push heroku master
-@@@
+</pre>
 
 You'll need to set the configuration values from the *config/application.yml* file as Heroku environment variables. See the article "Rails Environment Variables":http://railsapps.github.com/rails-environment-variables.html for more information.
 
 With the figaro gem, just run:
 
-@@@ console
+<pre>
 $ rake figaro:heroku
-@@@
+</pre>
 
 Alternatively, you can set Heroku environment variables directly.
 
 Here's how to set environment variables directly on Heroku with @heroku config:add@.
 
-@@@ console
+<pre>
 $ heroku config:add MANDRILL_USERNAME='Your_Username' MANDRILL_API_KEY='Your_Mandrill_API_Key'
 $ heroku config:add MAILCHIMP_LIST_ID='Your_List_ID'
 $ heroku config:add ADMIN_NAME='First User' ADMIN_EMAIL='user@example.com' ADMIN_PASSWORD='changeme'
 $ heroku config:add 'ROLES=[admin, user]'
 heroku config:add EMAIL_ADDRESS='me@example.com' DOMAIN='example.com'
-@@@
+</pre>
 
 Complete Heroku deployment with:
 
-@@@ console
+<pre>
 $ heroku run rake db:migrate
 $ heroku run rake db:seed
-@@@
+</pre>
 
 h2. Testing
 
