@@ -502,7 +502,7 @@ Heroku provides low cost, easily configured Rails application hosting.
 
 For your convenience, here is a "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html. See the article for details about preparing your application to deploy to Heroku.
 
-Be sure to set up SSL before you make your application available in production. See the "Heroku documentation on SSL":https://devcenter.heroku.com/articles/ssl or use CloudFlare as described in the "Accounts You May Need":#accounts-you-may-need section.
+Be sure to set up SSL before you make your application available in production. See the "Heroku documentation on SSL":https://devcenter.heroku.com/articles/ssl or use CloudFlare as described in the tutorial.
 
 After you've prepared your application as described in the "Tutorial for Rails on Heroku":http://railsapps.github.com/rails-heroku-tutorial.html article, precompile assets, commit to git, and push to Heroku:
 
