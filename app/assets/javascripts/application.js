@@ -24,7 +24,7 @@ $('document').ready(function() {
   // use AJAX to submit the "request invitation" form
   $('#invitation_button').on('click', function() {
     var email = $('form #user_email').val();
-    var dataString = 'user[email]='+ email
+    var dataString = 'user[email]='+ email;
     $.ajax({
       type: "POST",
       url: "/users",
