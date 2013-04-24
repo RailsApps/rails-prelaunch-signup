@@ -1,8 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  # ovverride #create to respond to AJAX with a partial
+  # override #create to respond to AJAX with a partial
   def create
     build_resource
+
     if resource.save
       if resource.active_for_authentication?
         sign_in(resource_name, resource)
@@ -22,6 +23,8 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_inactive_sign_up_path_for(resource)
+    # the page prelaunch visitors will see after they request an invitation
+    # unless Ajax is used to return a partial
     '/thankyou.html'
   end
 
