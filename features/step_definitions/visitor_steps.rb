@@ -13,12 +13,16 @@ When /^I visit the home page$/ do
     visit root_path
 end
 
-Then /^I should see a button "([^\"]*)"$/ do |arg1|
-  page.should have_button (arg1)
+When /^I fill in "(.*?)" with "(.*?)"$/ do |field, value|
+  fill_in field, with: value
 end
 
 When /^I click a button "([^"]*)"$/ do |arg1|
   click_button (arg1)
+end
+
+When /^I follow "(.*?)"$/ do |link|
+  click_link(link)
 end
 
 Then /^I should see a form with a field "([^"]*)"$/ do |arg1|
