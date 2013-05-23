@@ -5,6 +5,7 @@ end
 
 def invitation_request user
   visit '/users/sign_up'
+  click_button "Request invite"
   fill_in "Email", :with => user[:email]
   click_button "Request Invitation"
 end
