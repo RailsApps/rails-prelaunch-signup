@@ -2,7 +2,7 @@
 
 def create_visitor
   @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
-    :password => "please", :password_confirmation => "please" }
+    :password => "changeme", :password_confirmation => "changeme" }
 end
 
 def find_user
@@ -155,7 +155,7 @@ Then /^I should see a successful sign up message$/ do
 end
 
 Then /^I should see an invalid email message$/ do
-  page.should have_content "Emailis invalid"
+  page.should have_content "Email is invalid"
 end
 
 Then /^I should see a missing password message$/ do
