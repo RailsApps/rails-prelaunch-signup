@@ -12,7 +12,7 @@ Feature: Request Invitation
   Scenario: User signs up with valid data
     When I fill in "Email" with "example@example.com"
     And I click a button "Request Invitation"
-    Then I should see a message "Thank you!"
+    Then I should see an invitation thank you message
     And my email address should be stored in the database
     And my account should be unconfirmed
 
