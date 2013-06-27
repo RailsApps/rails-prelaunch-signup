@@ -34,12 +34,23 @@ Then /^I should see a message "([^\"]*)"$/ do |arg1|
   page.should have_content (arg1)
 end
 
+
+Then /^I should see an invitation thank you message$/ do
+  save_wait_time = Capybara.default_wait_time
+  Capybara.default_wait_time = 60
+  page.find('h1').should have_content ('Thank you')
+  Capybara.default_wait_time = save_wait_time
+end
+
 Then /^my email address should be stored in the database$/ do
   test_user = User.find_by_email("example@example.com")
   test_user.should respond_to(:email)
 end
 
 Then /^my account should be unconfirmed$/ do
+# Occasionally emits this message (when using webkit?):
+# QNetworkReplyImplPrivate::error: Internal problem, this method must only be called once.
+
   test_user = User.find_by_email("example@example.com")
   test_user.confirmed_at.should be_nil
 end

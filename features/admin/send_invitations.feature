@@ -10,7 +10,7 @@ Feature: Send Invitations
     And I follow "Request invite"
     When I fill in "Email" with "example@example.com"
     And I click a button "Request Invitation"
-    Then I should see a message "Thank you!"
+    Then I should see an invitation thank you message
     When I am logged in as an administrator
     And I visit the users page
     When I click a link "send invitation"
