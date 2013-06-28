@@ -3,6 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   # override #create to respond to AJAX with a partial
   def create
     build_resource
+    resource.email = resource_params[:email]
 
     if resource.save
       if resource.active_for_authentication?
