@@ -148,9 +148,11 @@ If you want to use the MongoDB datastore instead of ActiveRecord and a SQL datab
 
 h2. Tutorial
 
-A complete tutorial is available:
+An in-depth tutorial is available (subscription required). Subscriptions provide financial support for the RailsApps project.
 
-h4. "View the Tutorial":https://tutorials.railsapps.org/rails-prelaunch-signup
+You can use the starter app without getting the tutorial. The tutorial provides a detailed explanation of the code:
+
+h4. "Get the Tutorial":https://tutorials.railsapps.org/rails-prelaunch-signup
 
 The tutorial documents each step to follow to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere. If you’re new to Rails, see recommendations for a "Rails tutorial":https://tutorials.railsapps.org/rails-tutorial and a list of top resources for "Ruby and Rails":http://railsapps.github.io/ruby-and-rails.html. The article "What is Ruby? And Rails?":http://railsapps.github.io/what-is-ruby-rails.html is a good place to get a basic introduction to Rails.
 
