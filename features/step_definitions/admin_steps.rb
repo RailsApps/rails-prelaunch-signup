@@ -2,7 +2,7 @@ Given /^I am logged in as an administrator$/ do
   @admin = FactoryGirl.create(:user, email: "admin@example.com")
   @admin.add_role :admin
   @visitor ||= { :email => "admin@example.com",
-    :password => "please", :password_confirmation => "please" }
+    :password => "changeme", :password_confirmation => "changeme" }
   sign_in
 end
 
@@ -24,4 +24,8 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+Then /^I should see "(.*?)"$/ do |text|
+  page.should have_content(text)
 end
