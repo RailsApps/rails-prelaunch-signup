@@ -31,7 +31,12 @@ Then /^I should see a form with a field "([^"]*)"$/ do |arg1|
 end
 
 Then /^I should see a message "([^\"]*)"$/ do |arg1|
+  save_wait_time = Capybara.default_wait_time
+# Make sure we wait enough for Twitter and Google Plus
+  Capybara.default_wait_time = 60 if 'Thank you!' == arg1
   page.should have_content (arg1)
+  Capybara.default_wait_time = save_wait_time
+
 end
 
 Then /^my email address should be stored in the database$/ do
