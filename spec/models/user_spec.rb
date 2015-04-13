@@ -1,14 +1,23 @@
 require 'spec_helper'
 
-describe User do
+include Warden::Test::Helpers
+Warden.test_mode!
 
-  before(:each) do
-    @attr = {
-      :name => "Example User",
-      :email => "user@example.com",
-      :password => "changeme",
-      :password_confirmation => "changeme"
-    }
+RSpec.configure do
+  valid_session = { "user_id" => 1 },
+
+  @attr = {
+    :name => "Test User",
+    :email => "testuser@example.com",
+    :password => "changemenow",
+    :password_confirmation => "changemenow",
+  }
+end
+
+RSpec.describe User do
+
+  after(:each) do
+    Warden.test_reset!
   end
 
   it "should create a new instance given a valid attribute" do

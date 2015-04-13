@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-gem 'rails', '4.0.0'
+ruby '2.1.0'
+gem 'rails', '4.1.0'
 gem 'rubyzip', '< 1.0.0'
 gem 'sqlite3'
 group :development, :test do
@@ -19,6 +19,7 @@ end
 group :development do
   gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 0.7.2'
+  gem 'spring', '~> 1.3.4'
 end
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'cancan', '>= 1.6.9'
@@ -27,7 +28,7 @@ gem 'devise', '>= 2.2.3'
 gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 gem 'jquery-rails'
 gem 'protected_attributes'
-gem 'railties', '~> 4.0.0'
+gem 'railties', '~> 4.1.0'
 gem 'rolify', '>= 3.2.0'
 gem 'rubygems-update', '~> 2.4.6'
 gem 'sass-rails', '~> 4.0.0'
