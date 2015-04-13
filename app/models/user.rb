@@ -5,15 +5,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-
   after_create :add_user_to_mailchimp
   before_destroy :remove_user_from_mailchimp
 
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one
   validates_confirmation_of :password
+
   def password_required?
     if !persisted?
       !(password != "")
@@ -41,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   # new function to set the password
-  def attempt_set_password(params)
+  def attempt_set_password(id_params)
     p = {}
     p[:password] = params[:password]
     p[:password_confirmation] = params[:password_confirmation]
@@ -59,6 +57,12 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  # using strong_parameters
+  def id_params
+    require(:user).permit(:email, :password, :password_confirmation)
+   #require(:user).permit(:name, :email, :password, :password_confirmation, :remember_me)
+  end
 
   def add_user_to_mailchimp
     return if email.include?(ENV['ADMIN_EMAIL'])

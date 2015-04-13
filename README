@@ -1,19 +1,18 @@
 Rails Prelaunch Signup
 ========================
 
-An example Rails 3.2 app for a web startup prelaunch page.
+Note of 20150413 : this application is currently being updated to Ruby 2.2.1, Rails 4.2.1.
 
-You can use this project as a starting point for a Rails web application. It requires Rails 3.2 or newer and uses Devise http://github.com/plataformatec/devise for user management and authentication.
+What began as an example Rails 3.2 app for a web startup prelaunch page, is being brought current.
+
 ________________________
 
-See the README file on GitHub
-
-For more information, please see the updated README file on GitHub:
+For more information, please see the README file on GitHub:
 
 https://github.com/railsapps/rails-prelaunch-signup
 
 ________________________
 
-License
+MIT License
 
-Contact the author for license terms.
+Copyright © 2012-2015 Daniel Kehoe

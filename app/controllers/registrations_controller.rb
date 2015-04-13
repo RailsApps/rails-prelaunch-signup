@@ -1,8 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
+  helper_method :resource, :resource_name, :devise_mapping   # 20150412 addition 
 
   # override #create to respond to AJAX with a partial
   def create
     build_resource
+   #build_resource(sign_up_params)
+    resource.email = resource_params[:email]
+   # ^^ ref https://github.com/RailsApps/rails-prelaunch-signup/commit/ec01a952b56ccf49b4dfa4d529caea22b4dbdae8
 
     if resource.save
       if resource.active_for_authentication?
@@ -10,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
         (render(:partial => 'thankyou', :layout => false) && return)  if request.xhr?
         respond_with resource, :location => after_sign_up_path_for(resource)
       else
-        expire_session_data_after_sign_in!
+        expire_data_after_sign_in!
         (render(:partial => 'thankyou', :layout => false) && return)  if request.xhr?
         respond_with resource, :location => after_inactive_sign_up_path_for(resource)
       end

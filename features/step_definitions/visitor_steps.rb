@@ -1,6 +1,5 @@
 def new_user
-  @user ||= { :email => "example@example.com",
-    :password => "please", :password_confirmation => "please" }
+  @user ||= { :email => "example@example.com", :password => "please123", :password_confirmation => "please123" }
 end
 
 def invitation_request user
@@ -11,7 +10,7 @@ def invitation_request user
 end
 
 When /^I visit the home page$/ do
-    visit root_path
+  visit root_path
 end
 
 When /^I fill in "(.*?)" with "(.*?)"$/ do |field, value|
