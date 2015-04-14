@@ -2,11 +2,11 @@
 <div class="span12">
   <p>
     Send Bulk Invitations:
-    <%= link_to "10 &#183;".html_safe, bulk_invite_path(:quantity => '10') %>
-    <%= link_to "50 &#183;".html_safe, bulk_invite_path(:quantity => '50') %>
-    <%= link_to "100 &#183;".html_safe, bulk_invite_path(:quantity => '100') %>
-    <%= link_to "500 &#183;".html_safe, bulk_invite_path(:quantity => '500') %>
-    <%= link_to "1000", bulk_invite_path(:quantity => '1000') %>
+    <%= link_to "10 &#183;".html_safe, bulk_invite_path(quantity: '10') %>
+    <%= link_to "50 &#183;".html_safe, bulk_invite_path(quantity: '50') %>
+    <%= link_to "100 &#183;".html_safe, bulk_invite_path(quantity: '100') %>
+    <%= link_to "500 &#183;".html_safe, bulk_invite_path(quantity: '500') %>
+    <%= link_to "1000", bulk_invite_path(quantity: '1000') %>
   </p>
   <table class="table table-condensed">
     <thead>
@@ -29,7 +29,7 @@
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.created_at.to_date %></td>
-        <td><%= (user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user), {:class => 'btn btn-mini'}) : (link_to "resend", invite_user_path(user), {:class => 'btn btn-mini'})) unless user.confirmed_at %></td>
+        <td><%= (user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user), {class: 'btn btn-mini'}) : (link_to "resend", invite_user_path(user), {class: 'btn btn-mini'})) unless user.confirmed_at %></td>
         <td><%= user.confirmed_at.to_date if user.confirmed_at %></td>
         <td><%= user.sign_in_count if user.sign_in_count %></td>
         <td><%= user.last_sign_in_at.to_date if user.last_sign_in_at %></td>
@@ -38,7 +38,7 @@
           <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
           <%= render user %>
         </td>
-        <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
+        <td><%= link_to("Delete user", user_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-mini') unless user == current_user %></td>
       </tr>
     <% end %>
     </tbody>

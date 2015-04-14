@@ -4,13 +4,13 @@ gem 'rails', '4.2.1'
 gem 'rubyzip', '~> 1.0.0'
 gem 'sqlite3'
 group :development, :test do
-  gem 'binding_of_caller', '~> 0.7.2', :platforms => [:mri_19, :rbx]
+  gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_19, :rbx]
   gem 'rspec-rails', '>= 2.12.2'
   gem 'sass-rails', '~> 5.0'
   gem 'factory_girl_rails', '>= 4.2.0'
 end
 group :test do
-  gem 'cucumber-rails', '>= 1.3.1', :require => false
+  gem 'cucumber-rails', '>= 1.3.1', require: false
   gem 'capybara', '>= 2.0.3'
   gem 'database_cleaner', '>= 1.0.0.RC1'
   gem 'email_spec', '>= 1.4.0'
@@ -31,7 +31,9 @@ gem 'jquery-rails'
 gem 'protected_attributes'
 gem 'railties', '~> 4.2.0'
 gem 'rolify', '>= 3.2.0'
+gem 'responders', '~> 2.0'
 gem 'rubygems-update', '~> 2.4.6'
 gem 'selenium-webdriver', '~> 2.45.0'
 gem 'simple_form', '>= 2.1.0'
 gem 'uglifier', '~> 2.7.1'
+gem 'web-console', '~> 2.0'

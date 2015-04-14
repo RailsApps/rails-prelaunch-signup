@@ -65,7 +65,7 @@ Then /^(?:I|they|"([^"]*?)") should receive (an|no|\d+) emails? with subject \/(
 end
 
 Then /^(?:I|they|"([^"]*?)") should receive an email with the following body:$/ do |address, expected_body|
-  open_email(address, :with_text => expected_body)
+  open_email(address, with_text: expected_body)
 end
 
 #
@@ -78,19 +78,19 @@ When /^(?:I|they|"([^"]*?)") opens? the email$/ do |address|
 end
 
 When /^(?:I|they|"([^"]*?)") opens? the email with subject "([^"]*?)"$/ do |address, subject|
-  open_email(address, :with_subject => subject)
+  open_email(address, with_subject: subject)
 end
 
 When /^(?:I|they|"([^"]*?)") opens? the email with subject \/([^"]*?)\/$/ do |address, subject|
-  open_email(address, :with_subject => Regexp.new(subject))
+  open_email(address, with_subject: Regexp.new(subject))
 end
 
 When /^(?:I|they|"([^"]*?)") opens? the email with text "([^"]*?)"$/ do |address, text|
-  open_email(address, :with_text => text)
+  open_email(address, with_text: text)
 end
 
 When /^(?:I|they|"([^"]*?)") opens? the email with text \/([^"]*?)\/$/ do |address, text|
-  open_email(address, :with_text => Regexp.new(text))
+  open_email(address, with_text: Regexp.new(text))
 end
 
 #

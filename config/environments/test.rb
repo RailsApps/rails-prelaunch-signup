@@ -32,7 +32,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
 
   # Randomize the order test cases are executed.
-  # config.active_support.test_order = :random
+  config.active_support.test_order = :sorted # or `:random` if you prefer
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
@@ -40,5 +40,5 @@ Rails.application.configure do
   # ActionMailer Config
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { host: 'example.com' }
 end

@@ -1,11 +1,11 @@
 def new_user
-  @user ||= { :email => "example@example.com", :password => "please123", :password_confirmation => "please123" }
+  @user ||= { email: "example@example.com", password: "please123", password_confirmation: "please123" }
 end
 
 def invitation_request user
   visit '/users/sign_up'
   click_button "Request invite"
-  fill_in "Email", :with => user[:email]
+  fill_in "Email", with: user[:email]
   click_button "Request Invitation"
 end
 
@@ -48,6 +48,6 @@ When /^I request an invitation with valid user data$/ do
 end
 
 When /^I request an invitation with an invalid email$/ do
-  user = new_user.merge(:email => "notanemail")
+  user = new_user.merge(email: "notanemail")
   invitation_request user
 end

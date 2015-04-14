@@ -80,16 +80,16 @@ Rails.application.configure do
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
-  config.action_mailer.default :charset => "utf-8"  
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default charset: "utf-8"  
+  config.action_mailer.default_url_options = { host: 'example.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 25,
-    :user_name => ENV["MANDRILL_USERNAME"],
-    :password  => ENV["MANDRILL_API_KEY"]
+    address: "smtp.mandrillapp.com",
+    port: 25,
+    user_name: ENV["MANDRILL_USERNAME"],
+    password: ENV["MANDRILL_API_KEY"],
   }
 
 end
