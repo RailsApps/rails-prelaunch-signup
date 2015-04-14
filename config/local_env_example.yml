@@ -19,20 +19,19 @@
 # Source Reference : http://railsapps.github.com/rails-environment-variables.html
 
 ADMIN_NAME: Admin
-ADMIN_EMAIL: 'user@example.com'
-ADMIN_PASSWORD: 'changeme'
-DOMAIN_NAME: 'example.com'
-GMAIL_USERNAME: 'Your_Gmail_Username'
-GMAIL_PASSWORD: 'Your_Gmail_Password'
-MAILCHIMP_API_KEY: 'Your_MailChimp_API_key'
-MAILCHIMP_LIST_ID: 'Your_MailChimp_List_ID'
-STRIPE_API_KEY: 'Your_Stripe_Test_or_Production_Private_API_key'
-STRIPE_PUBLISHABLE_KEY: 'Your_Stripe_Test_or_Production_Publishable_Key'
-ROLES: [admin, silver, gold, platinum]
+ADMIN_EMAIL: user@example.com
+ADMIN_PASSWORD: changeme
+DOMAIN_NAME: example.com
+GMAIL_USERNAME: Your_Gmail_Username
+GMAIL_PASSWORD: Your_Gmail_Password
+MAILCHIMP_API_KEY: Your_MailChimp_API_key
+MAILCHIMP_LIST_ID: Your_MailChimp_List_ID
+EMAIL_ADDRESS: user@example.com
+ROLES: '[admin, user]'
 
 # Generate your own new key with $ rake secret
-SECRET_KEY_BASE: 'your_very_long_secret_key'
+SECRET_KEY_BASE: your_very_long_secret_key
 
 # uncomment if you use Mandrill :
-#MANDRILL_USERNAME: 'Your_Mandrill_User_Name'
-#MANDRILL_API_KEY: 'Your_Mandrill_Test_or_Production_Private_API_key'
+#MANDRILL_USERNAME: Your_Mandrill_User_Name
+#MANDRILL_API_KEY: Your_Mandrill_Test_or_Production_Private_API_key
