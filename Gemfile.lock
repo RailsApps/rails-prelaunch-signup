@@ -85,7 +85,7 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    ffi (1.8.1)
+    ffi (1.11.1)
     figaro (0.6.4)
       bundler (~> 1.0)
       rails (>= 3, < 5)
